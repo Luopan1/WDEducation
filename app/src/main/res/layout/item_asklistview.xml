@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:background="@color/deep_gray"
+              android:orientation="vertical">
+    <LinearLayout
+        android:layout_marginTop="5dp"
+        android:background="@drawable/white_color_corn5"
+        android:layout_marginRight="@dimen/dp_10"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <RelativeLayout
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/circleImage"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/base_color_circle"/>
+
+        <TextView
+
+            android:id="@+id/askTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/circleImage"
+            android:layout_marginBottom="15dp"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginRight="42dp"
+            android:layout_marginTop="16dp"
+            android:layout_toRightOf="@+id/circleImage"
+            android:text="请问毕业后还可以申请学士学位吗？"
+            android:textColor="@color/black"/>
+
+        <ImageView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/you"/>
+    </RelativeLayout>
+
+    <TextView
+        android:layerType="software"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:background="@drawable/dash_line"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp">
+
+        <com.test.com.utills.CircleImageView
+            android:id="@+id/anwserPhotoImage"
+            android:src="@mipmap/ic_launcher"
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_width="50dp"
+            android:layout_height="50dp"/>
+        <TextView
+            android:id="@+id/loveMan"
+            android:layout_marginBottom="@dimen/dp_10"
+            android:gravity="center"
+            android:text="11"
+            android:textColor="@color/white"
+            android:background="@color/orange_deep"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="16dp"
+            android:layout_below="@+id/anwserPhotoImage"
+            android:layout_width="20dp"
+            android:layout_height="20dp"/>
+        <TextView
+            android:id="@+id/ask_anwser"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginBottom="20dp"
+            android:maxLines="4"
+            android:ellipsize="end"
+            android:text="根据四川省学位办的政策要求，毕业后申请学位的时间是6个月的限期，每年6月、12月份申请毕业证，3月、9月申请学位证，这里"
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_toRightOf="@+id/anwserPhotoImage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>

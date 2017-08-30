@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="@dimen/dp_10"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/white_color_gray_line">
+
+        <TextView
+            android:id="@+id/time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="17dp"
+            android:text="2017年5月20日 13:02"/>
+
+        <!--<ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/dp_10"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/landian"/>-->
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/time"
+            android:layout_marginLeft="9dp"
+            android:layout_marginRight="9dp"
+            android:layout_marginTop="10dp"
+            android:text="四川省2017年4月(171次)自学考试成绩查询通知"
+            android:textColor="@color/black"
+            android:textSize="20sp"/>
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="136dp"
+            android:layout_below="@+id/title"
+            android:layout_marginLeft="9dp"
+            android:layout_marginRight="9dp"
+            android:layout_marginTop="15dp"
+            android:scaleType="centerCrop"
+            android:src="@color/base_color"/>
+
+        <TextView
+            android:id="@+id/descriptio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/imageView"
+            android:layout_marginLeft="9dp"
+            android:layout_marginRight="9dp"
+            android:layout_marginTop="10dp"
+            android:text="经典合伙人火热招募中，欢迎各位有志之士加入！"/>
+
+        <TextView
+            android:id="@+id/hengxian"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/descriptio"
+            android:layout_marginLeft="9dp"
+            android:layout_marginRight="9dp"
+            android:layout_marginTop="12dp"
+            android:background="@color/deep_gray"/>
+
+        <RelativeLayout
+            android:id="@+id/seeInfoRelative"
+            android:layout_width="match_parent"
+            android:layout_height="47dp"
+            android:layout_below="@+id/hengxian">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="9dp"
+                android:text="阅读全文"
+                android:textColor="@color/black"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="9dp"
+                android:src="@drawable/you"/>
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</LinearLayout>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <RelativeLayout
+        android:id="@+id/layout_bg"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_height="150dp">
+        <RelativeLayout
+            android:id="@+id/layout_within"
+            android:layout_width="match_parent"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/drawoble_white"
+            android:layout_height="150dp">
+            <ImageView
+                android:id="@+id/iv_icon"
+                android:layout_width="match_parent"
+                android:background="@color/deep_gray"
+                android:layout_margin="5dp"
+                android:layout_height="100dp" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_below="@+id/iv_icon"
+                android:layout_height="match_parent">
+                <TextView
+                    android:id="@+id/tv_title"
+                    android:layout_width="wrap_content"
+                    android:textColor="@color/text_color"
+                    android:textSize="15sp"
+                    android:layout_centerInParent="true"
+                    android:text="近代史"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_height="wrap_content" />
+            </RelativeLayout>
+
+
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/layout_num"
+            android:layout_width="35dp"
+            android:visibility="gone"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/base_color_y"
+            android:layout_height="35dp">
+            <TextView
+                android:id="@+id/tv_num"
+                  android:layout_width="wrap_content"
+                  android:textColor="@color/white"
+                  android:textSize="14sp"
+                  android:text="111"
+                android:layout_centerInParent="true"
+                  android:layout_height="wrap_content" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+</LinearLayout>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="base_color">#068BDA</color>
+    <color name="gray">#9E9E9E</color>
+    <color name="deep_gray">#F2F2F2</color>
+    <color name="white">#ffffff</color>
+    <color name="black">#000000</color>
+    <color name="blue">#02BA0E</color>
+    <color name="orange">#FFBB17</color>
+    <color name="orange_deep">#FF9933</color>
+    <color name="deep_base_color">#68C4E9</color>
+    <color name="dark">#5e5656</color>
+    <color name="xianColor">#E0E0E0</color>
+    <color name="red">#FF0000</color>
+    <color name="backgunag">#ECECEC</color>
+    <color name="text_color">#343434</color>
+    <color name="translucent">#50000000</color>
+
+</resources>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="82dp"
+        android:background="@color/white">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="15dp"
+            android:text="报考专业：会计:(西南财经大学)"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:id="@+id/time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/title"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="15dp"
+            android:text="2017.08.01  08:30"/>
+
+        <TextView
+            android:id="@+id/totalMoney"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="15dp"
+            android:text="￥1988"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:id="@+id/statue"
+            android:layout_width="80dp"
+            android:layout_height="30dp"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/totalMoney"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="13dp"
+            android:background="@drawable/base_color_white"
+            android:gravity="center"
+            android:text="支付"
+            android:textColor="@color/base_color"/>
+    </RelativeLayout>
+
+</RelativeLayout>

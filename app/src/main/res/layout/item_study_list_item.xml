@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <RelativeLayout
+        android:id="@+id/layout_bg"
+        android:layout_width="match_parent"
+        android:background="@color/white"
+        android:layout_height="120dp">
+          <View
+              android:id="@+id/view"
+              android:layout_width="match_parent"
+              android:layout_height="0.5dp"
+              android:layout_alignParentBottom="true"
+              android:background="@color/xianColor"/>
+        <ImageView
+            android:id="@+id/iv_icon"
+            android:layout_width="70dp"
+            android:scaleType="fitXY"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp"
+            android:background="@color/backgunag"
+            android:layout_height="70dp" />
+        <TextView
+            android:id="@+id/tv_title"
+              android:layout_width="wrap_content"
+              android:textColor="@color/text_color"
+              android:textSize="17sp"
+            android:layout_toRightOf="@+id/iv_icon"
+              android:text="2017年4月  （17.1次）四川省高等教育自学考试通告2017年4月  （17.1次）四川省高等教育自学考试通告"
+            android:maxLines="3"
+            android:layout_alignTop="@+id/iv_icon"
+            android:ellipsize="end"
+            android:layout_marginRight="20dp"
+              android:layout_marginLeft="15dp"
+              android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/tv_time"
+              android:layout_width="wrap_content"
+              android:textColor="@color/text_color"
+              android:textSize="15sp"
+              android:text="2017-03-05"
+            android:layout_marginBottom="10dp"
+            android:layout_marginRight="20dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+              android:layout_marginLeft="15dp"
+              android:layout_height="wrap_content" />
+    </RelativeLayout>
+</LinearLayout>

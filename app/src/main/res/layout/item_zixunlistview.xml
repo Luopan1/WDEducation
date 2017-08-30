@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/all_rl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#F2F2F2"
+                android:descendantFocusability="blocksDescendants">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:background="@color/white">
+
+        <RelativeLayout
+            android:id="@+id/infoKind"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true">
+
+            <TextView
+                android:id="@+id/vertivalLine"
+                android:layout_width="3dp"
+                android:layout_height="16dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/base_color"/>
+
+            <TextView
+                android:id="@+id/kind"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="10dp"
+                android:layout_toRightOf="@+id/vertivalLine"
+                android:text="自考资讯"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:id="@+id/seeAll"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="25dp"
+                android:layout_marginTop="10dp"
+                android:focusable="false"
+                android:text="查看全部"
+                android:textColor="#5F5F5F"/>
+
+            <ImageView
+                android:id="@+id/arrow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:src="@mipmap/you"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/secondRelative"
+            android:layout_width="match_parent"
+            android:layout_height="75dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/infoKind"
+            android:layout_marginTop="20dp">
+
+            <ImageView
+                android:id="@+id/newImage"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:layout_marginLeft="18dp"
+                android:scaleType="centerCrop"
+                android:src="@color/base_color"/>
+
+            <TextView
+                android:id="@+id/Title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="95dp"
+                android:layout_marginRight="25dp"
+                android:text="2017年4月(17.1次)四川省高等教育自学考试通知"
+                android:textColor="@color/black"/>
+
+            <TextView
+
+                android:id="@+id/sendTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginBottom="8dp"
+                android:layout_marginRight="25dp"
+                android:text="2017-03-21"
+                android:textColor="#5F5F5F"/>
+
+            <TextView
+                android:id="@+id/hengxian"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="10dp"
+                android:background="@color/gray"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/thirdRelative"
+            android:layout_width="match_parent"
+            android:layout_height="75dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/secondRelative"
+            android:layout_marginTop="10dp">
+
+            <ImageView
+                android:id="@+id/newImage1"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:layout_marginLeft="18dp"
+                android:scaleType="centerCrop"
+                android:src="@color/base_color"/>
+
+            <TextView
+                android:id="@+id/Title1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="95dp"
+                android:layout_marginRight="25dp"
+                android:text="2017年4月(17.1次)四川省高等教育自学考试通知"
+                android:textColor="@color/black"/>
+
+            <TextView
+
+                android:id="@+id/sendTime1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginBottom="8dp"
+                android:layout_marginRight="25dp"
+                android:text="2017-03-21"
+                android:textColor="#5F5F5F"/>
+
+            <TextView
+                android:id="@+id/hengxian1"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="10dp"
+                android:background="@color/gray"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/forthRelative"
+            android:layout_width="match_parent"
+            android:layout_height="75dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/thirdRelative"
+            android:layout_marginTop="10dp">
+
+            <ImageView
+                android:id="@+id/newImage2"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:layout_marginLeft="18dp"
+                android:scaleType="centerCrop"
+                android:src="@color/base_color"/>
+
+            <TextView
+                android:id="@+id/Title2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="95dp"
+                android:layout_marginRight="25dp"
+                android:text="2017年4月(17.1次)四川省高等教育自学考试通知"
+                android:textColor="@color/black"/>
+
+            <TextView
+
+                android:id="@+id/sendTime2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginBottom="8dp"
+                android:layout_marginRight="25dp"
+                android:text="2017-03-21"
+                android:textColor="#5F5F5F"/>
+        </RelativeLayout>
+    </RelativeLayout>
+</RelativeLayout>

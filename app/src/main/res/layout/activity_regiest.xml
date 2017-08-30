@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_regiest"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.test.com.activity.RegiestActivity">
+
+    <LinearLayout
+        android:id="@+id/titleLinear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="41dp"
+            android:layout_marginTop="15dp"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/image1"
+                android:layout_width="15dp"
+                android:layout_height="22dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="35dp"
+                android:src="@mipmap/ic_launcher"/>
+
+            <TextView
+                android:id="@+id/vertivalLine"
+                android:layout_width="1dp"
+                android:layout_height="30dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="22dp"
+                android:layout_toRightOf="@+id/image1"
+                android:background="@color/gray"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_toRightOf="@+id/vertivalLine"
+                android:background="@null"
+                android:hint="@string/input_phonenumber"
+                android:paddingLeft="22dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="15dp"
+                android:background="@color/gray"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="41dp"
+            android:layout_marginTop="15dp"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/image2"
+                android:layout_width="15dp"
+                android:layout_height="22dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="35dp"
+                android:src="@mipmap/ic_launcher"/>
+
+            <TextView
+                android:id="@+id/vertivalLine2"
+                android:layout_width="1dp"
+                android:layout_height="30dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="22dp"
+                android:layout_toRightOf="@+id/image2"
+                android:background="@color/gray"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_toLeftOf="@+id/tv_getCheckCode"
+                android:layout_toRightOf="@+id/vertivalLine2"
+                android:background="@null"
+                android:hint="@string/checkCode"
+                android:paddingLeft="22dp"/>
+
+            <TextView
+                android:id="@+id/tv_getCheckCode"
+                android:layout_width="90dp"
+                android:layout_height="35dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="15dp"
+                android:background="@drawable/base_color_corn5"
+                android:gravity="center"
+                android:text="获取验证码"
+                android:textColor="@color/white"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="15dp"
+                android:background="@color/gray"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="41dp"
+            android:layout_marginTop="15dp"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/image3"
+                android:layout_width="15dp"
+                android:layout_height="22dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="35dp"
+                android:src="@mipmap/ic_launcher"/>
+
+            <TextView
+                android:id="@+id/vertivalLine3"
+                android:layout_width="1dp"
+                android:layout_height="30dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="22dp"
+                android:layout_toRightOf="@+id/image3"
+                android:background="@color/gray"/>
+
+            <EditText
+                android:id="@+id/et_setPWD"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_toLeftOf="@+id/checkBox1"
+                android:layout_toRightOf="@+id/vertivalLine3"
+                android:background="@null"
+                android:hint="@string/setPWD"
+                android:paddingLeft="22dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="15dp"
+                android:background="@color/gray"/>
+
+            <CheckBox
+                android:id="@+id/checkBox1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="15dp"
+                android:layout_marginRight="15dp"
+                android:button="@drawable/passworld_see_nosee"
+                android:checked="true"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="41dp"
+            android:layout_marginTop="15dp"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/image4"
+                android:layout_width="15dp"
+                android:layout_height="22dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="35dp"
+                android:src="@mipmap/ic_launcher"/>
+
+            <TextView
+                android:id="@+id/vertivalLine4"
+                android:layout_width="1dp"
+                android:layout_height="30dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="22dp"
+                android:layout_toRightOf="@+id/image4"
+                android:background="@color/gray"/>
+
+            <EditText
+                android:id="@+id/et_comfirmPWD"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_toLeftOf="@+id/checkBox2"
+                android:layout_toRightOf="@+id/vertivalLine4"
+                android:background="@null"
+                android:hint="@string/confirmPWD"
+                android:paddingLeft="22dp"/>
+
+            <CheckBox
+                android:id="@+id/checkBox2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="15dp"
+                android:button="@drawable/passworld_see_nosee"
+                android:checked="true"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="15dp"
+                android:background="@color/gray"/>
+        </RelativeLayout>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/regiest"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_below="@+id/titleLinear"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="36dp"
+        android:background="@drawable/base_color_corn5"
+        android:text="@string/lijiLogi"
+        android:textColor="@color/white"/>
+</RelativeLayout>

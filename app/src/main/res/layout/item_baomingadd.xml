@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:id="@+id/ll_all"
+              android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:paddingBottom="15dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.test.com.utills.CircleImageView
+                android:id="@+id/delete"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="@dimen/dp_10"
+                android:src="@mipmap/guanbi"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="@dimen/dp_10">
+
+            <RelativeLayout
+
+                android:id="@+id/Relative"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="5dp"
+                android:layout_toRightOf="@+id/textview1"
+                android:background="@drawable/white_color_grayline"
+                >
+
+                <EditText
+                    android:id="@+id/EditName"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="20dp"
+                    android:background="@null"
+                    android:ellipsize="end"
+                    android:hint="默认注册时的姓名，可修改"
+                    android:padding="5dp"
+                    android:singleLine="true"
+                    android:textSize="14sp"/>
+            </RelativeLayout>
+
+            <TextView
+                android:id="@id/textview1"
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="20dp"
+                android:gravity="right"
+                android:text="姓名"
+                android:textColor="@color/black"
+                android:textSize="15sp"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="@dimen/dp_10">
+
+            <RelativeLayout
+                android:id="@+id/Relative1"
+                android:layout_width="240dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="5dp"
+                android:layout_toRightOf="@+id/tv"
+                android:background="@drawable/white_color_grayline"
+                >
+
+                <EditText
+                    android:id="@+id/EditName1"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="20dp"
+                    android:background="@null"
+                    android:hint="输入身份证"
+                    android:padding="5dp"
+                    android:textSize="14sp"/>
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/tv"
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="20dp"
+                android:gravity="right"
+                android:text="身份证"
+                android:textColor="@color/black"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="@dimen/dp_10">
+
+            <RelativeLayout
+                android:id="@+id/Relative2"
+                android:layout_width="240dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="5dp"
+                android:layout_toRightOf="@+id/tv2"
+                android:background="@drawable/white_color_grayline"
+                >
+
+                <EditText
+                    android:id="@+id/EditName2"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="20dp"
+                    android:background="@null"
+                    android:ellipsize="end"
+                    android:hint="默认注册时的手机号，可修改"
+                    android:padding="5dp"
+                    android:singleLine="true"
+                    android:textSize="14sp"/>
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/tv2"
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="20dp"
+                android:gravity="right"
+                android:text="手机号"
+                android:textColor="@color/black"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="@dimen/dp_10">
+
+            <RelativeLayout
+                android:id="@+id/Relative3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="5dp"
+                android:layout_toRightOf="@+id/tv1"
+                android:background="@drawable/white_color_grayline"
+                >
+
+                <com.jaredrummler.materialspinner.MaterialSpinner
+                    android:id="@+id/EditName3"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_margin="1dp"
+                    android:ellipsize="end"
+                    android:hint="默认注册时的在读院校，可修改"
+                    android:maxLines="1"
+                    android:textSize="14sp"/>
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/tv1"
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="20dp"
+                android:gravity="right"
+                android:text="在读院校"
+                android:textColor="@color/black"
+                android:textSize="14sp"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="@dimen/dp_10">
+
+            <RelativeLayout
+                android:id="@+id/Relative4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="5dp"
+                android:layout_toRightOf="@+id/tv4"
+                android:background="@drawable/white_color_grayline"
+                >
+
+                <com.jaredrummler.materialspinner.MaterialSpinner
+                    android:id="@+id/EditName4"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_margin="1dp"
+                    android:ellipsize="end"
+                    android:hint="默认注册时的在读院校，可修改"
+                    android:maxLines="1"
+                    android:textSize="14sp"/>
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/tv4"
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="20dp"
+                android:gravity="right"
+                android:text="报考专业"
+                android:textColor="@color/black"/>
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/add"
+            android:layout_width="70dp"
+            android:layout_height="35dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/white_color_grayline"
+            android:gravity="center"
+            android:text="新增成员"
+            android:textColor="@color/black"/>
+
+        <Button
+            android:id="@+id/commitOrder"
+            android:layout_width="170dp"
+            android:layout_height="40dp"
+            android:layout_below="@+id/BaoMingRecyclerView"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="39dp"
+            android:background="@drawable/base_color_corn5"
+            android:text="提交订单"
+            android:textColor="@color/white"/>
+    </LinearLayout>
+</LinearLayout>

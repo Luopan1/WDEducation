@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.test.com.firstFragmentactivity.CheckGradeActivity">
+
+    <TextView
+        android:id="@+id/kaociRelative"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="开通查询考次:178"
+        android:textColor="@color/black"/>
+
+    <RelativeLayout
+        android:id="@+id/zhunkaozhengRelative"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_below="@+id/kaociRelative"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/white_color_corn5_grayline">
+
+        <TextView
+            android:id="@+id/tv1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:text="准考证号"
+            android:textColor="@color/black"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="@dimen/dp_10"
+            android:layout_toRightOf="@+id/tv1"
+            android:background="@null"
+            android:gravity="end|center_vertical"
+            android:hint="请输入准考证号"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/zhunkaozhengRelative1"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_below="@+id/zhunkaozhengRelative"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/white_color_corn5_grayline">
+
+        <TextView
+            android:id="@+id/tv2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:text="准考证号"
+            android:textColor="@color/black"/>
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/checkCodeTextView"
+        android:layout_width="125dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/zhunkaozhengRelative1"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:layout_marginTop="25dp"
+        android:background="@color/gray"/>
+
+    <RelativeLayout
+        android:layout_width="220dp"
+        android:layout_height="45dp"
+        android:layout_below="@+id/zhunkaozhengRelative1"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="@dimen/dp_10"
+        android:layout_marginTop="25dp"
+        android:layout_toRightOf="@+id/checkCodeTextView"
+        android:background="@drawable/white_color_corn5_grayline">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/dp_10"
+            android:background="@null"
+            android:hint="验证码"/>
+    </RelativeLayout>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_below="@id/checkCodeTextView"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:layout_marginRight="@dimen/dp_10"
+        android:layout_marginTop="35dp"
+        android:background="@drawable/base_color_corn5"
+        android:text="查询"
+        android:textColor="@color/white"/>
+</RelativeLayout>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_marginBottom="2dp"
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="@dimen/dp_10"
+        android:background="@drawable/black_color_corn5">
+
+        <TextView
+            android:id="@+id/daiJinQuanName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:text="文都教育代金券"
+            android:textColor="@color/white"/>
+
+        <RelativeLayout
+            android:layout_marginTop="25dp"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/moneyRelative"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            >
+
+            <TextView
+                android:textSize="20sp"
+                android:id="@+id/TextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:text="面值￥"
+                android:textColor="@color/white"/>
+
+            <TextView
+                android:id="@+id/Money"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_toRightOf="@+id/TextView"
+                android:text="80"
+                android:textColor="@color/white"
+                android:textSize="40sp"/>
+        </RelativeLayout>
+
+        <TextView
+            android:layout_below="@+id/moneyRelative"
+            android:layout_centerInParent="true"
+            android:id="@+id/useMethod"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="可抵用学费"
+            android:textColor="@color/white"/>
+
+
+        <TextView
+            android:id="@+id/DeadLine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="5dp"
+            android:text="有效期至：2017.5.20-2017.9.20"
+            android:textColor="@color/white"/>
+    </RelativeLayout>
+</LinearLayout>

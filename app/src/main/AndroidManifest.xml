@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.test.com">
+
+    <!-- Required -->
+    <permission
+        android:name="com.test.com.permission.JPUSH_MESSAGE"
+        android:protectionLevel="signature"/>
+    <!-- To auto-complete the email text field in the login form with the user's emails -->
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+
+    <!-- Jpush -->
+    <!-- Required  一些系统要求的权限，如访问网络等 -->
+    <uses-permission android:name="com.test.com.permission.JPUSH_MESSAGE"/>
+    <uses-permission android:name="android.permission.RECEIVE_USER_PRESENT"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <!-- Optional for location -->
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/> <!-- 用于开启 debug 版本的应用在6.0 系统上 层叠窗口权限 -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS"/>
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.GET_TASKS"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS"/>
+    <uses-permission android:name="android.permission.READ_LOGS"/>
+
+    <application
+        android:name=".application.MyApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:screenOrientation="portrait"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".activity.MainActivity"
+            android:windowSoftInputMode="adjustPan">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".firstFragmentactivity.CheckActivity">
+        </activity>
+        <activity android:name=".firstFragmentactivity.CheckGradeActivity">
+        </activity>
+        <activity android:name=".firstFragmentactivity.ZuoWeiCheckActivity">
+        </activity>
+        <activity android:name=".firstFragmentactivity.ExamPlanActivity">
+        </activity>
+        <activity android:name=".firstFragmentactivity.MajorListsActivity">
+        </activity>
+        <activity android:name=".firstFragmentactivity.SearchPlanActivity">
+        </activity>
+        <activity android:name=".firstFragmentactivity.AskActivity">
+        </activity>
+        <activity android:name=".firstFragmentactivity.AskAndAnwserInfoActivity">
+        </activity>
+        <activity android:name=".firstFragmentactivity.SearchAskActivity"/>
+        <activity android:name=".firstFragmentactivity.NewsActivity">
+        </activity>
+        <activity android:name=".secondFragmentActivity.ZiKaoInformationActivity">
+        </activity>
+        <activity android:name=".WebViewActivity">
+        </activity>
+        <activity android:name=".secondFragmentActivity.KnownZIKaoActivity">
+        </activity>
+        <activity android:name=".secondFragmentActivity.ZiKaoMajorActivity">
+        </activity>
+        <activity android:name=".secondFragmentActivity.StudentTouGaoActivity">
+        </activity>
+        <activity android:name=".secondFragmentActivity.JoinUsActivity">
+        </activity>
+        <activity
+            android:name=".fourthFragementActivity.PersonalSettingActivity"
+            android:label="@string/title_activity_personal_setting"
+            android:theme="@style/AppTheme">
+        </activity>
+        <activity android:name=".fourthFragementActivity.ChangeUserNickNameActivity">
+        </activity>
+        <activity android:name=".fourthFragementActivity.CacheActivity">
+        </activity>
+        <activity android:name=".fourthFragementActivity.VideoInfoActivity">
+        </activity>
+        <activity android:name=".fourthFragementActivity.AboutWenDuEducationActivity">
+        </activity>
+        <activity android:name=".fourthFragementActivity.ChangePassWorldActivity">
+        </activity>
+        <activity android:name=".firstFragmentactivity.NewStudentsCheckInActivity">
+        </activity>
+        <activity android:name=".activity.ForgetPassWorldActivity"/>
+        <activity android:name=".activity.LoginActivity"/>
+        <activity android:name=".activity.RegiestActivity"/>
+        <activity android:name=".activity.RegiestActivity1">
+        </activity>
+        <activity android:name=".fourthFragementActivity.DaiJinQuanActivity">
+        </activity>
+        <activity android:name=".activity.CommitSuccessActivity">
+        </activity>
+        <activity android:name=".firstFragmentactivity.NewsActivity1"/>
+        <activity android:name=".activity.WeiXinRegiestnActivity">
+        </activity>
+        <activity android:name=".fourthFragementActivity.VideoCacheActivity">
+        </activity>
+        <activity android:name=".secondFragmentActivity.GreatLearnerAvtivity">
+        </activity>
+        <activity android:name=".firstFragmentactivity.SearchMajorActivity">
+        </activity>
+        <activity android:name=".ThridFragemntActivity.ComfirmOrderActivity">
+        </activity>
+        <activity android:name=".ThridFragemntActivity.DaiJinQuanActivity">
+        </activity>
+        <activity android:name=".ThridFragemntActivity.HowToGetDaijinquanActivity">
+        </activity>
+        <activity android:name=".ThridFragemntActivity.CuXiaoMaActivity">
+        </activity>
+        <activity android:name=".ThridFragemntActivity.HowToGetCuXiaoMaActivity">
+        </activity>
+
+        <!-- 友盟分享 -->
+        <!-- wechat callback -->
+        <activity
+            android:name=".wxapi.WXEntryActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity
+            android:name="com.tencent.tauth.AuthActivity"
+            android:launchMode="singleTask"
+            android:noHistory="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+
+                <data android:scheme="tencent100424468"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.tencent.connect.common.AssistActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+
+        <!-- Jpush -->
+        <!-- Rich push 核心功能 since 2.0.6 -->
+        <activity
+            android:name="cn.jpush.android.ui.PopWinActivity"
+            android:exported="false"
+            android:theme="@style/MyDialogStyle">
+        </activity>
+
+        <!-- Required SDK核心功能 -->
+        <activity
+            android:name="cn.jpush.android.ui.PushActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:exported="false"
+            android:theme="@android:style/Theme.NoTitleBar">
+            <intent-filter>
+                <action android:name="cn.jpush.android.ui.PushActivity"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="com.test.com"/>
+            </intent-filter>
+        </activity>
+
+        <!-- Required SDK 核心功能 -->
+        <!-- 可配置android:process参数将PushService放在其他进程中 -->
+        <service
+            android:name="cn.jpush.android.service.PushService"
+            android:exported="false"
+            android:process=":mult">
+            <intent-filter>
+                <action android:name="cn.jpush.android.intent.REGISTER"/>
+                <action android:name="cn.jpush.android.intent.REPORT"/>
+                <action android:name="cn.jpush.android.intent.PushService"/>
+                <action android:name="cn.jpush.android.intent.PUSH_TIME"/>
+            </intent-filter>
+        </service>
+        <service android:name=".services.MyService"/>
+
+        <!-- since 1.8.0 option 可选项。用于同一设备中不同应用的JPush服务相互拉起的功能。 -->
+        <!-- 若不启用该功能可删除该组件，将不拉起其他应用也不能被其他应用拉起 -->
+        <service
+            android:name="cn.jpush.android.service.DaemonService"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="cn.jpush.android.intent.DaemonService"/>
+
+                <category android:name="com.test.com"/>
+            </intent-filter>
+        </service>
+
+        <!-- Required SDK核心功能 -->
+        <receiver
+            android:name="cn.jpush.android.service.PushReceiver"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter android:priority="1000">
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_RECEIVED_PROXY"/> <!-- Required  显示通知栏 -->
+                <category android:name="com.test.com"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.USER_PRESENT"/>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+            </intent-filter>
+            <!-- Optional -->
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED"/>
+                <action android:name="android.intent.action.PACKAGE_REMOVED"/>
+
+                <data android:scheme="package"/>
+            </intent-filter>
+        </receiver>
+
+        <!-- Required SDK核心功能 -->
+        <receiver
+            android:name="cn.jpush.android.service.AlarmReceiver"
+            android:exported="false"/>
+        <!-- Required  . Enable it you can get statistics data with channel -->
+        <meta-data
+            android:name="JPUSH_CHANNEL"
+            android:value="developer-default"/>
+        <meta-data
+            android:name="JPUSH_APPKEY"
+            android:value="13c8bf92472cb8b4b34fb7a0"/> <!-- </>值来自开发者平台取得的AppKey -->
+        <meta-data
+            android:name="UMENG_APPKEY"
+            android:value="5992d0d66e27a457e8000627"/>
+        <meta-data
+            android:name="UMENG_CHANNEL"
+            android:value="Channel ID"/>
+
+        <activity android:name=".activity.WeChatLoginActivity">
+        </activity>
+        <activity android:name=".fourthFragementActivity.MyOrderActivity">
+        </activity>
+        <activity android:name=".study.activity.StudyHomeActivity">
+        </activity>
+        <activity android:name=".study.activity.MajorChoiceActivity"/>
+        <activity android:name=".study.activity.CurriculumClassificationActivity"/>
+        <activity android:name=".study.activity.CurriculumClassificationListActivity"/>
+        <activity
+            android:name=".study.activity.VideoPlayActivity"
+            android:configChanges="orientation|screenSize"
+            android:theme="@style/ActivityTheme.Full"/>
+
+        <service android:name=".study.download.DownLoadService"/>
+
+        <activity android:name=".study.activity.FileSeeActivity"/>
+        <activity android:name=".study.activity.AnswerActivity"/>
+        <activity android:name=".study.activity.ErrorAnswerActivity"/>
+        <activity android:name=".study.activity.CacheCurriculumListActivity"/>
+        <activity android:name=".study.activity.CacheCurriculumTypeListActivity"/>
+        <activity android:name=".study.activity.FileFormatActivity"/>
+        <activity android:name=".study.activity.CacheListActivity"/>
+        <activity android:name=".study.activity.OldExamActivity"/>
+        <activity android:name=".wxapi.WXPayEntryActivity"/>
+        <activity android:name=".study.activity.TeacherListActivity"/>
+        <activity android:name=".study.activity.LookVideoListActivity"/>
+
+        <!-- 阿里支付 -->
+        <activity
+            android:name="com.alipay.sdk.app.H5PayActivity"
+            android:configChanges="orientation|keyboardHidden|navigation|screenSize"
+            android:exported="false"
+            android:screenOrientation="behind"
+            android:windowSoftInputMode="adjustResize|stateHidden">
+        </activity>
+        <activity
+            android:name="com.alipay.sdk.app.H5AuthActivity"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:exported="false"
+            android:screenOrientation="behind"
+            android:windowSoftInputMode="adjustResize|stateHidden">
+        </activity>
+        <activity android:name=".ThridFragemntActivity.BuySuccessActivity">
+        </activity>
+    </application>
+
+</manifest>

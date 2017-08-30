@@ -65,12 +65,18 @@ public class SecondFragment extends BaseFragment implements ZiXunRecylerAdapter.
 
     @Override
     protected void setListener() {
+
         mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 ShowToast("点击了" + position + "个");
             }
         });
+
+
+
+
+
         mZikaoLinear.setOnClickListener(this);
         mLiaojiezikao.setOnClickListener(this);
         mZikaozhuanye.setOnClickListener(this);

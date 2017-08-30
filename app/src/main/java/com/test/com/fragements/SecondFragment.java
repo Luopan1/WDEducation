@@ -48,6 +48,10 @@ public class SecondFragment extends BaseFragment implements ZiXunRecylerAdapter.
 
     @Override
     protected void initView() {
+        String[] images = {"http://pic41.nipic.com/20140425/18162057_145619712142_2.jpg",
+                "http://pic2.ooopic.com/11/77/47/63b1OOOPIC74.jpg",
+                "http://pic65.nipic.com/file/20150425/13839354_210311767000_2.jpg"};
+
         mListView = getView(R.id.listView);
         final View headerView = View.inflate(getActivity(), R.layout.item_second_fragment_header, null);
         mConvenientBanner = (ConvenientBanner) headerView.findViewById(R.id.convenientBaner);

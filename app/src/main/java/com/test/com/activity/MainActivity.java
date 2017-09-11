@@ -377,9 +377,9 @@ public class MainActivity extends BaseToolbarActivity implements SharedInterFace
     @Override
     public void sendShared() {
 
-        UMWeb web = new UMWeb("http://120.26.141.238/wendustudy/index.php");
-        web.setTitle("This is music title");//标题
-        web.setDescription("文都教育");//描述
+        UMWeb web = new UMWeb(UrlFactory.baseUrl+"index.php/myapi/share/register");
+        web.setTitle("文都在线教育");//标题
+        web.setDescription("文都教育致力于在校大学生“专升本”，“第二学位”在线教育辅导。我们“严禁”，“乐学”，“求实”，“创新”的教育理念，为广大学子提供真挚专业的助学辅导，文都教育，伴你高飞！");//描述
 
         new ShareAction(MainActivity.this)
                 .withMedia(web)

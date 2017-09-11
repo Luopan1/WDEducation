@@ -43,6 +43,7 @@ public class JoinUsActivity extends BaseToolbarActivity {
         params.put("type", 5);
         params.put("page", mCurrentPage);
         getDataFromInternet(UrlFactory.informationLists, params, 0);
+        showLoadingDialog();
 
 
     }

@@ -40,6 +40,7 @@ public class GreatLearnerAvtivity extends BaseToolbarActivity {
         RequestParams params = new RequestParams();
         params.put("page", CurrentPage);
         getDataFromInternet(UrlFactory.excellentStudent, params, 0);
+        showLoadingDialog();
     }
 
     @Override

@@ -4,14 +4,13 @@ import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ProgressBar;
 
-import com.tencent.smtt.export.external.interfaces.JsPromptResult;
-import com.tencent.smtt.export.external.interfaces.JsResult;
-import com.tencent.smtt.sdk.WebChromeClient;
 import com.tencent.smtt.sdk.WebSettings;
 import com.tencent.smtt.sdk.WebView;
 import com.tencent.smtt.sdk.WebViewClient;
 import com.test.com.baseUi.BaseToolbarActivity;
+import com.test.com.baseUi.ProgressWebview;
 
 import butterknife.BindView;
 
@@ -29,8 +28,9 @@ public class WebViewActivity extends BaseToolbarActivity {
     private static final String APP_CACHE_DIRNAME = "/webcache"; // web缓存目录
     private String mUrl;
     @BindView(R.id.forum_context)
-    WebView mWebView;
-
+    ProgressWebview mWebView;
+    private ProgressBar progressbar;  //进度条
+    private int progressHeight = 10;  //进度条的高度，默认10px
 
     @Override
     protected int getContentView() {
@@ -40,6 +40,7 @@ public class WebViewActivity extends BaseToolbarActivity {
     @Override
     protected void initData() {
         WebSettings webSettings = mWebView.getSettings();
+
         webSettings.setJavaScriptEnabled(true);
         mWebView.getSettings().setRenderPriority(WebSettings.RenderPriority.HIGH);
         // 建议缓存策略为，判断是否有网络，有的话，使用LOAD_DEFAULT,无网络时，使用LOAD_CACHE_ELSE_NETWORK
@@ -57,6 +58,10 @@ public class WebViewActivity extends BaseToolbarActivity {
         mWebView.getSettings().setAppCachePath(cacheDirPath);
         // 开启Application Cache功能
         mWebView.getSettings().setAppCacheEnabled(true);
+
+        mWebView.getScrollBarFadeDuration();
+
+
 
         mWebView.setWebViewClient(new WebViewClient() {
             @Override
@@ -91,25 +96,8 @@ public class WebViewActivity extends BaseToolbarActivity {
         });
 
 
-        mWebView.setWebChromeClient(new WebChromeClient() {
-            @Override
-            public boolean onJsAlert(WebView view, String url, String message, JsResult result) {
 
 
-                return super.onJsAlert(view, url, message, result);
-            }
-
-            @Override
-            public boolean onJsConfirm(WebView view, String url, String message, JsResult result) {
-                return super.onJsConfirm(view, url, message, result);
-            }
-
-            @Override
-            public boolean onJsPrompt(WebView view, String url, String message, String defaultValue, JsPromptResult result) {
-                return super.onJsPrompt(view, url, message, defaultValue,
-                        result);
-            }
-        });
 
         mWebView.loadUrl(mUrl);
         Log.e("TAG+url", mUrl);
@@ -125,6 +113,7 @@ public class WebViewActivity extends BaseToolbarActivity {
         });
     }
 
+
     @Override
     public void onBackPressed() {
         if (mWebView.canGoBack()) {
@@ -136,7 +125,17 @@ public class WebViewActivity extends BaseToolbarActivity {
 
     @Override
     protected void setListener() {
+        mWebView.setOnWebViewListener(new ProgressWebview.onWebViewListener() {
+            @Override
+            public void onProgressChange(WebView view, int newProgress) {
 
+            }
+
+            @Override
+            public void onPageFinish(WebView view) {
+
+            }
+        });
     }
 
     @Override
@@ -158,5 +157,27 @@ public class WebViewActivity extends BaseToolbarActivity {
         mUrl = intent.getString(URL);
         Log.e(TAG, mUrl);
         initToobar(title, R.mipmap.fanhui);
+
+       /* progressbar = new ProgressBar(context, null,
+                android.R.attr.progressBarStyleHorizontal);
+        //设置加载进度条的高度
+        progressbar.setLayoutParams(new AbsoluteLayout.LayoutParams(FrameLayout.LayoutParams.MATCH_PARENT, progressHeight, 0, 0));
+
+        Drawable drawable = context.getResources().getDrawable(android.R.drawable.progress_horizontal);
+        progressbar.setProgressDrawable(drawable);
+
+        //添加进度到WebView
+        mWebView.addView(progressbar);
+
+
+        //适配手机大小
+        mWebView.getSettings().setUseWideViewPort(true);
+        mWebView.getSettings().setLayoutAlgorithm(WebSettings.LayoutAlgorithm.NARROW_COLUMNS);
+        mWebView.getSettings().setLoadWithOverviewMode(true);
+        mWebView.getSettings().setSupportZoom(true);
+        mWebView.getSettings().setBuiltInZoomControls(true);
+        mWebView.getSettings().setDisplayZoomControls(false);*/
+
+
     }
 }

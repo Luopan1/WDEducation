@@ -101,6 +101,7 @@ public class KnownZIKaoActivity extends BaseToolbarActivity {
         params.put("type", 1);
         params.put("page", mCurrentPage);
         getDataFromInternet(UrlFactory.informationLists,params,0);
+        showLoadingDialog();
 
     }
 

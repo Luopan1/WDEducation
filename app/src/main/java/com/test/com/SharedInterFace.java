@@ -7,4 +7,5 @@ package com.test.com;
 public interface SharedInterFace {
 
     public void sendShared();
+    public void bindWeixin();
 }

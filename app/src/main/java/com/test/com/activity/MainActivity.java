@@ -17,9 +17,11 @@ import com.alibaba.fastjson.JSONObject;
 import com.flyco.tablayout.CommonTabLayout;
 import com.flyco.tablayout.listener.CustomTabEntity;
 import com.flyco.tablayout.listener.OnTabSelectListener;
+import com.loopj.android.http.RequestParams;
 import com.test.com.NewsCallBack;
 import com.test.com.R;
 import com.test.com.SharedInterFace;
+import com.test.com.UrlFactory;
 import com.test.com.application.MyApplication;
 import com.test.com.baseUi.BaseToolbarActivity;
 import com.test.com.entity.TabEntity;
@@ -30,7 +32,9 @@ import com.test.com.fragements.FourthFragment;
 import com.test.com.fragements.SecondFragment1;
 import com.test.com.fragements.ZiXunFragment;
 import com.test.com.services.MyService;
+import com.test.com.utills.SPUtils;
 import com.umeng.socialize.ShareAction;
+import com.umeng.socialize.UMAuthListener;
 import com.umeng.socialize.UMShareAPI;
 import com.umeng.socialize.UMShareListener;
 import com.umeng.socialize.bean.SHARE_MEDIA;
@@ -38,6 +42,7 @@ import com.umeng.socialize.media.UMWeb;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import butterknife.BindView;
 import me.weyye.hipermission.HiPermission;
@@ -62,6 +67,8 @@ public class MainActivity extends BaseToolbarActivity implements SharedInterFace
     private ImageView mImageRight;
     public static boolean hasPremission = false;
     public static boolean isHasNoReadNews = true;
+    public static int indexCount = 0;
+
 
     @Override
     protected int getContentView() {
@@ -133,8 +140,26 @@ public class MainActivity extends BaseToolbarActivity implements SharedInterFace
 
     @Override
     protected void onResume() {
-        mTabLayout.setCurrentTab(index);
+        if(indexCount == 1)
+        {
+            indexCount= 0;
+            mTabLayout.setCurrentTab(4);
+        }
+        else
+            mTabLayout.setCurrentTab(index);
         super.onResume();
+
+//        if(indexCount == 1)
+//        {
+//            indexCount = 0;
+//           new  Handler().post(new Runnable() {
+//               @Override
+//               public void run() {
+//
+//               }
+//           });
+//        }
+
     }
 
     @Override
@@ -213,6 +238,14 @@ public class MainActivity extends BaseToolbarActivity implements SharedInterFace
                     Log.e("TAG+++unionid", "登录成功");
                     Toast.makeText(MyApplication.getContext(), jsonObject.getString("msg"), Toast.LENGTH_SHORT).show();
                 }
+                break;
+            case 2:
+                // TODO: 2017/8/19 有账号绑定账号回来  应该有一个token
+                super.getSuccess(object, what);
+                ShowToast(object.getString("msg"));
+                Log.i("TAG+++", object.getString("msg"));
+                MyApplication.getDataBase().setToken(object.getJSONObject("data").getString("token"));
+                SPUtils.setUnionid(MyApplication.getDataBase().getUnionid());
                 break;
         }
 
@@ -355,4 +388,58 @@ public class MainActivity extends BaseToolbarActivity implements SharedInterFace
                 .setCallback(shareListener)
                 .open();
     }
+
+    @Override
+    public void bindWeixin() {
+        UMShareAPI.get(this).getPlatformInfo(this, SHARE_MEDIA.WEIXIN, umAuthListener);
+    }
+
+    private UMAuthListener umAuthListener = new UMAuthListener() {
+        @Override
+        public void onStart(SHARE_MEDIA platform) {
+            //授权开始的回调
+            showLoadingDialog();
+        }
+
+        @Override
+        public void onComplete(SHARE_MEDIA platform, int action, Map<String, String> data) {
+            try {
+                cancleLoadingDialog();
+                String unionid = data.get("uid");
+                Log.e("TAG++onComplete", unionid + "+++");
+                MyApplication.getDataBase().setUnionid(unionid);
+                SPUtils.setUnionid(unionid);
+                Log.e("TAG+getUUId", SPUtils.getUnionid() + "+++");
+                weChatLoginResult(unionid);
+
+                //// TODO: 2017/8/18  没有账号 跳转到微信LoginActivity，有账号  跳转到登录界面 去绑定手机号
+                Log.e("TAG++onComplete", data.toString());
+            } catch (Exception e) {
+                ShowToast("出错了 请稍候再试");
+            }
+        }
+
+        @Override
+        public void onError(SHARE_MEDIA platform, int action, Throwable t) {
+            Log.e("TAG+++",t.toString());
+            ShowToast("绑定失败");
+            cancleLoadingDialog();
+        }
+
+        @Override
+        public void onCancel(SHARE_MEDIA platform, int action) {
+            cancleLoadingDialog();
+        }
+    };
+
+    private void weChatLoginResult(String unionid) {
+        // TODO: 2017/8/18  加上微信的id参数
+        RequestParams params = new RequestParams();
+        params.put("phone", SPUtils.getCount());
+        params.put("password",SPUtils.getPWD());
+        params.put("unionid", MyApplication.getDataBase().getUnionid());
+        getDataFromInternet(UrlFactory.weChatBindPhone, params, 2);
+        showLoadingDialog();
+    }
+
 }

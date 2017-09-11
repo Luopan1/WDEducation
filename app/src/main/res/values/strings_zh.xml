@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">WDEducation</string>
+    <string name="app_name">文都教育</string>
 
     <!-- Strings related to login -->
     <string name="prompt_email">Email</string>

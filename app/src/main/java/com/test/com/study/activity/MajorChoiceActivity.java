@@ -1,9 +1,12 @@
 package com.test.com.study.activity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Handler;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -12,6 +15,7 @@ import com.lcodecore.tkrefreshlayout.RefreshListenerAdapter;
 import com.lcodecore.tkrefreshlayout.TwinklingRefreshLayout;
 import com.lcodecore.tkrefreshlayout.header.SinaRefreshView;
 import com.test.com.R;
+import com.test.com.activity.MainActivity;
 import com.test.com.baseUi.BaseToolbarActivity;
 import com.test.com.study.bean.MajorChoiceBean;
 import com.test.com.study.network.RxSchedulersHelper;
@@ -20,6 +24,7 @@ import com.test.com.study.utils.BaseRecyclerAdapter;
 import com.test.com.study.utils.BaseRecyclerHolder;
 import com.test.com.study.utils.ItemAnimatorFactory;
 import com.test.com.study.utils.SpacesItemDecoration;
+import com.test.com.utills.ActivityUtil;
 import com.test.com.utills.Constants;
 
 import java.util.ArrayList;
@@ -92,7 +97,21 @@ public class MajorChoiceActivity extends BaseToolbarActivity {
                 else
                 {
                     if("".equals(spUtils.get("jihuo",Constants.uniqueness+"index","").toString()))
-                        ShowToast("用户尚未激活");
+                    {
+                        new AlertDialog.Builder(mContext).setTitle("提示")//设置对话框标题
+                                .setMessage("该帐号尚未激活，不能使用该功能，是否前往激活？")//设置显示的内容
+                                .setPositiveButton("激活", new DialogInterface.OnClickListener() {//添加确定按钮
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int which) {//确定按钮的响应事件
+                                        // TODO Auto-generated method stub
+                                        dialog.dismiss();
+                                        MainActivity.indexCount = 1;
+                                        ActivityUtil.finishActivity(StudyHomeActivity.class);
+                                        finish();
+                                    }
+
+                                }).setNegativeButton("取消",null).show();//在按键响应事件中显示此对话框
+                    }
                     else
                         startActivity(new Intent(mContext,CurriculumClassificationActivity.class).putExtra("id",majorChoiceBeanList.get(position).getId()).putExtra("type",getIntent().getStringExtra("type")).putExtra("title",majorChoiceBeanList.get(position).getId()).putExtra("name",majorChoiceBeanList.get(position).getName()));
 
@@ -124,7 +143,11 @@ public class MajorChoiceActivity extends BaseToolbarActivity {
 
     private void getStudyEntrance()
     {
-        mSubscription = apiService.getStudyEntrance().compose(RxSchedulersHelper.<JSONObject>io_main()).subscribe(new RxSubscriber<JSONObject>() {
+
+        String id = getIntent().getStringExtra("type");
+        Log.e("======","===="+id);
+
+        mSubscription = apiService.getStudyEntrance(id).compose(RxSchedulersHelper.<JSONObject>io_main()).subscribe(new RxSubscriber<JSONObject>() {
             @Override
             public void _onNext(JSONObject jsonObject) {
                 if(jsonObject.getIntValue("code") == 1)

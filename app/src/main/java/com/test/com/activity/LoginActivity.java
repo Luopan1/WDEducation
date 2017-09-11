@@ -173,9 +173,17 @@ public class LoginActivity extends BaseToolbarActivity {
                     String token = object.getJSONObject("data").getString("token");
                     String uuid = object.getJSONObject("data").getString("uuid");
 
+
+
                     MyApplication.userBaseInfo.setUuid(uuid);
                     Constants.uniqueness=uuid;
                     Log.e("login", object.toString());
+
+
+                   /* // TODO: 2017/8/30
+                    spUtils.put("jihuo", Constants.uniqueness + "index", "111111");*/
+
+
                     MyApplication.getDataBase().setToken(token);
 
                     SPUtils.saveUserInfo(mUserPWD.getText().toString().trim(), mUserCount.getText().toString().trim());
@@ -186,9 +194,17 @@ public class LoginActivity extends BaseToolbarActivity {
             case 1:
                 ShowToast(object.getString("msg"));
 
+
+
                 MyApplication.getDataBase().setToken(object.getJSONObject("data").getString("token"));
 
                 SPUtils.setUnionid(MyApplication.getDataBase().getUnionid());
+
+
+             /*   // TODO: 2017/8/30
+                spUtils.put("jihuo", Constants.uniqueness + "index", "111111");*/
+
+
                 finish();
                 break;
         }

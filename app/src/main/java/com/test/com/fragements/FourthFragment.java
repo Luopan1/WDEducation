@@ -1,10 +1,11 @@
 package com.test.com.fragements;
 
 import android.app.Dialog;
+import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Environment;
+import android.support.v7.app.AlertDialog;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -26,6 +27,7 @@ import com.bumptech.glide.Glide;
 import com.google.gson.Gson;
 import com.lcodecore.tkrefreshlayout.RefreshListenerAdapter;
 import com.lcodecore.tkrefreshlayout.TwinklingRefreshLayout;
+import com.lcodecore.tkrefreshlayout.header.SinaRefreshView;
 import com.loopj.android.http.RequestParams;
 import com.test.com.R;
 import com.test.com.SharedInterFace;
@@ -44,7 +46,6 @@ import com.test.com.study.activity.MajorChoiceActivity;
 import com.test.com.utills.CircleImageView;
 import com.test.com.utills.Constants;
 import com.test.com.utills.DataCleanManager;
-import com.test.com.utills.DensityUtil;
 import com.test.com.utills.SPUtils;
 
 import static com.test.com.R.id.userCicleImage;
@@ -75,6 +76,7 @@ public class FourthFragment extends BaseFragment implements View.OnClickListener
     private RelativeLayout mShareRelative;
     private RelativeLayout MyOrder;
     private Dialog mLoadingDialog;
+    private RelativeLayout bindWeixinRelative;
 
 
     public FourthFragment() {
@@ -93,8 +95,8 @@ public class FourthFragment extends BaseFragment implements View.OnClickListener
     protected void initView() {
         refreshLayout = getView(R.id.refreshLayout);
         mUserImageView = getView(userCicleImage);
-        mUserImageView.setBorderColor(Color.parseColor("#E0DBDA"));
-        mUserImageView.setBorderWidth(DensityUtil.dip2px(getActivity(), 5));
+      /*  mUserImageView.setBorderColor(Color.parseColor("#E0DBDA"));
+        mUserImageView.setBorderWidth(DensityUtil.dip2px(getActivity(), 5));*/
         mTitleRelative = getView(R.id.titleImageView);
         useRNickName = getView(R.id.userNickName);
         mUserImageView.bringToFront();
@@ -110,7 +112,7 @@ public class FourthFragment extends BaseFragment implements View.OnClickListener
         mJiHUoRelative = getView(R.id.jihuoStatue);
         mStatus = getView(R.id.status);
         mShareRelative = getView(R.id.ShareRelative);
-
+        bindWeixinRelative = getView(R.id.bindWeixinRelative);
 
 
     }
@@ -133,10 +135,10 @@ public class FourthFragment extends BaseFragment implements View.OnClickListener
             e.printStackTrace();
         }
         //设置刷新头
-       /* SinaRefreshView headerView = new SinaRefreshView(mContext);
+        SinaRefreshView headerView = new SinaRefreshView(mContext);
         headerView.setArrowResource(R.mipmap.zhuanquan);
         headerView.setTextColor(0xff745D5C);
-        refreshLayout.setHeaderView(headerView);*/
+        refreshLayout.setHeaderView(headerView);
         refreshLayout.setEnableRefresh(true);
         refreshLayout.setEnableLoadmore(false);
         refreshLayout.postDelayed(new Runnable() {
@@ -165,6 +167,7 @@ public class FourthFragment extends BaseFragment implements View.OnClickListener
         MyOrder.setOnClickListener(this);
         layoutCuoti.setOnClickListener(this);
         useRNickName.setOnClickListener(this);
+        bindWeixinRelative.setOnClickListener(this);
 
         refreshLayout.setOnRefreshListener(new RefreshListenerAdapter() {
             @Override
@@ -192,7 +195,7 @@ public class FourthFragment extends BaseFragment implements View.OnClickListener
                         RequestParams requestParams = new RequestParams();
                         getDataFromInternet(UrlFactory.getUserInfo, requestParams, 3);
                     } else {
-                        Glide.with(getActivity()).load(R.mipmap.ic_launcher_round).asBitmap().into(mUserImageView);
+                        Glide.with(getActivity()).load(R.mipmap.touxiang).asBitmap().into(mUserImageView);
                     }
                 }
 
@@ -224,8 +227,6 @@ public class FourthFragment extends BaseFragment implements View.OnClickListener
                 } else {
                     mStatus.setText("未激活");
                 }
-
-
             }
         });
 
@@ -300,6 +301,26 @@ public class FourthFragment extends BaseFragment implements View.OnClickListener
 
                 }
                 break;
+            case R.id.bindWeixinRelative:
+                if (isLogined()) {
+                    if (MyApplication.getDataBase().getUnionid().isEmpty()) {
+                        mSharedInterFace.bindWeixin();
+                    } else {
+                        new AlertDialog.Builder(getActivity()).setTitle("提示")//设置对话框标题
+                                .setMessage("当前账号已经使用过微信绑定，无须再次绑定")//设置显示的内容
+                                .setPositiveButton("确定", new DialogInterface.OnClickListener() {//添加确定按钮
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int which) {//确定按钮的响应事件
+                                        // TODO Auto-generated method stub
+                                        dialog.dismiss();
+                                    }
+
+                                }).show();//在按键响应事件中显示此对话框、
+                    }
+
+                }
+
+                break;
         }
     }
 
@@ -324,7 +345,7 @@ public class FourthFragment extends BaseFragment implements View.OnClickListener
                 MyApplication.getDataBase().setToken("");
                 SPUtils.saveUserInfo("", "");
                 SPUtils.setUnionid("");
-                Glide.with(getActivity()).load(R.mipmap.ic_launcher_round).asBitmap().into(mUserImageView);
+                Glide.with(getActivity()).load(R.mipmap.touxiang).asBitmap().into(mUserImageView);
                 jumpToActivity(LoginActivity.class, false);
 
             }
@@ -357,6 +378,9 @@ public class FourthFragment extends BaseFragment implements View.OnClickListener
         Log.e(TAG, "onResume");
         refreshLayout.startRefresh();
         super.onResume();
+        if (MyApplication.getDataBase().getToken().isEmpty()) {
+            Glide.with(getActivity()).load(R.mipmap.touxiang).into(mUserImageView);
+        }
 
 
     }
@@ -420,7 +444,6 @@ public class FourthFragment extends BaseFragment implements View.OnClickListener
                     //
                     //                spUtils.get("jihuo","index","").toString()    这个状态是获取激活码
                     mPopWindow.dismiss();
-                    showSuccessDialog();
 
                 }
 
@@ -513,7 +536,11 @@ public class FourthFragment extends BaseFragment implements View.OnClickListener
                 if (object.getInteger("code") == 1) {
                     Gson gson = new Gson();
                     UserInfo user = gson.fromJson(object.toString(), UserInfo.class);
-                    useRNickName.setText(user.getData().getUserInfo().getNickname());
+                    if (user.getData().getUserInfo().getNickname().isEmpty()) {
+                        useRNickName.setText("用户昵称");
+                    } else {
+                        useRNickName.setText(user.getData().getUserInfo().getNickname());
+                    }
                     MyApplication.getDataBase().setUuid(user.getData().getUserInfo().getUuid());
                     Constants.uniqueness = user.getData().getUserInfo().getUuid();
 
@@ -523,8 +550,11 @@ public class FourthFragment extends BaseFragment implements View.OnClickListener
                     } else {
                         mStatus.setText("未激活");
                     }
-
-                    Glide.with(getActivity()).load(UrlFactory.imagePath + user.getData().getUserInfo().getHeadimg()).asBitmap().into(mUserImageView);
+                    if (user.getData().getUserInfo().getHeadimg().isEmpty()) {
+                        Glide.with(getActivity()).load(R.mipmap.touxiang).asBitmap().into(mUserImageView);
+                    } else {
+                        Glide.with(getActivity()).load(UrlFactory.imagePath + user.getData().getUserInfo().getHeadimg()).asBitmap().into(mUserImageView);
+                    }
                 }
 
                 break;

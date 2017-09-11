@@ -26,7 +26,8 @@ public interface  ApiService {
      * 类型入口接口
      */
     @POST("Study/Entrance")
-    Observable<JSONObject> getStudyEntrance();
+    @FormUrlEncoded
+    Observable<JSONObject> getStudyEntrance(@Field("type") String type);
 
 
 

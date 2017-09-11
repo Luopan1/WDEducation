@@ -1,10 +1,8 @@
 package com.test.com.fragements;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 
@@ -28,7 +26,6 @@ import com.test.com.secondFragmentActivity.KnownZIKaoActivity;
 import com.test.com.secondFragmentActivity.StudentTouGaoActivity;
 import com.test.com.secondFragmentActivity.ZiKaoInformationActivity;
 import com.test.com.secondFragmentActivity.ZiKaoMajorActivity;
-import com.test.com.study.utils.SizeUtils;
 import com.test.com.utills.NetImageLoaderHolder;
 
 import java.util.ArrayList;
@@ -70,14 +67,6 @@ public class SecondFragment1 extends BaseFragment implements View.OnClickListene
         mLearnerwrote = (LinearLayout) headerView.findViewById(R.id.learnerwrote);
         mJoinUs = (LinearLayout) headerView.findViewById(R.id.joinUs);
         mContactUs = (LinearLayout) headerView.findViewById(R.id.contactUs);
-
-        SizeUtils sizeUtils = new SizeUtils(getActivity());
-
-        int size = 750 / 304;
-        WindowManager wm = (WindowManager) getActivity().getSystemService(Context.WINDOW_SERVICE);
-        int width = wm.getDefaultDisplay().getWidth();
-        int height = wm.getDefaultDisplay().getHeight();
-        sizeUtils.setLayoutSizeHeight(mConvenientBanner, width / size / 2);
     }
 
     @Override

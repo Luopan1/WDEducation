@@ -1,15 +1,12 @@
 package com.test.com.firstFragmentactivity;
 
-import android.content.Context;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.RelativeLayout;
 
 import com.bigkoo.convenientbanner.ConvenientBanner;
 import com.bigkoo.convenientbanner.holder.CBViewHolderCreator;
 import com.test.com.R;
 import com.test.com.baseUi.BaseToolbarActivity;
-import com.test.com.study.utils.SizeUtils;
 import com.test.com.utills.NetImageLoaderHolder;
 
 import java.util.Arrays;
@@ -87,13 +84,6 @@ public class CheckActivity extends BaseToolbarActivity {
                 return new NetImageLoaderHolder();
             }
         }, imagsList);
-        SizeUtils sizeUtils = new SizeUtils(this);
-
-        int size = 750 / 304;
-        WindowManager wm = (WindowManager) this.getSystemService(Context.WINDOW_SERVICE);
-        int width = wm.getDefaultDisplay().getWidth();
-        int height = wm.getDefaultDisplay().getHeight();
-        sizeUtils.setLayoutSizeHeight(mConvenientBanner, width / size / 2);
     }
 
     @Override

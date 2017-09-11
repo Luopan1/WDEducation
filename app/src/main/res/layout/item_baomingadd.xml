@@ -51,7 +51,7 @@
                     android:layout_marginLeft="20dp"
                     android:background="@null"
                     android:ellipsize="end"
-                    android:hint="默认注册时的姓名，可修改"
+                    android:hint="请输入姓名"
                     android:padding="5dp"
                     android:singleLine="true"
                     android:textSize="14sp"/>
@@ -92,7 +92,7 @@
                     android:layout_height="40dp"
                     android:layout_marginLeft="20dp"
                     android:background="@null"
-                    android:hint="输入身份证"
+                    android:hint="请输入身份证"
                     android:padding="5dp"
                     android:textSize="14sp"/>
             </RelativeLayout>
@@ -131,7 +131,7 @@
                     android:layout_marginLeft="20dp"
                     android:background="@null"
                     android:ellipsize="end"
-                    android:hint="默认注册时的手机号，可修改"
+                    android:hint="请输入手机号"
                     android:padding="5dp"
                     android:singleLine="true"
                     android:textSize="14sp"/>

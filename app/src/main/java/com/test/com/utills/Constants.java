@@ -20,7 +20,7 @@ public class  Constants {
     public static String ImagHost = "http://www.dzkonline.com/";
     public static String httpHost = ImagHost+"index.php/Myapi/";
     public static String uid = "";
-    public static String WxId="";
+    public static String WxId="wx3035dace6ab3628d";
     public static String uniqueness = "";
 
 
@@ -34,7 +34,7 @@ public class  Constants {
             sb.append('&');
         }
         sb.append("key=");
-        sb.append("222900d203257167a538b84a996adbbF");
+        sb.append("202cb962ac59075b964b07152d234b70");
         String appSign = MD5.getMessageDigest(sb.toString().getBytes())
                 .toUpperCase();
         return appSign;
@@ -48,7 +48,7 @@ public class  Constants {
         }
         PayReq req = new PayReq();
         req.appId = Constants.WxId;
-        req.partnerId = "1486537662";
+        req.partnerId = "1488089012";
         req.prepayId = prepayId;
         req.packageValue = "Sign=WXPay";
         req.nonceStr = nonceStr;

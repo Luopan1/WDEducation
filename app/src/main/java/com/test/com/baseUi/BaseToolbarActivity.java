@@ -51,6 +51,7 @@ import com.test.com.study.network.ApiService;
 import com.test.com.study.network.HttpsRequest;
 import com.test.com.study.utils.SizeUtils;
 import com.test.com.study.utils.StatusBar;
+import com.test.com.utills.ActivityUtil;
 import com.test.com.utills.ClickEventUtils;
 import com.test.com.utills.KeyBoardUtils;
 
@@ -129,6 +130,7 @@ public abstract class BaseToolbarActivity extends AppCompatActivity implements V
             mContentView.removeAllViews();//mContentview清空里面的view
         }
         setContentView(getContentView());    //添加布局
+        ActivityUtil.addActivity(mActivity);
         sizeUtils = new SizeUtils(mActivity);
         spUtils = new SPUtils(mActivity);
         ButterKnife.bind(this);
@@ -575,6 +577,7 @@ public abstract class BaseToolbarActivity extends AppCompatActivity implements V
      */
     @Override
     protected void onDestroy() {
+        ActivityUtil.finishActivity(mActivity);
         if (mSubscription != null && !mSubscription.isUnsubscribed()) {
             mSubscription.unsubscribe();//回退时，网络未取消，取消当前网络请求
         }
@@ -697,12 +700,14 @@ public abstract class BaseToolbarActivity extends AppCompatActivity implements V
 
             @Override
             public void onStart() {
+                Log.e("TAG++++",params.toString());
                 super.onStart();
             }
 
             @Override
             public void onSuccess(int statusCode, Header[] headers, String responseString) {
                 JSONObject jsonObject = JSON.parseObject(responseString);
+                Log.e("TAG+++++",jsonObject.toString());
                 if (jsonObject.getInteger("code") == 1) {
                     cancleLoadingDialog();
                     Log.e("TAG++++", jsonObject.toString());

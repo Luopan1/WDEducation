@@ -46,6 +46,7 @@ public class SecondFragment extends BaseFragment implements ZiXunRecylerAdapter.
     private LinearLayout mJoinUs;
     private LinearLayout mContactUs;
 
+
     @Override
     protected void initView() {
         String[] images = {"http://pic41.nipic.com/20140425/18162057_145619712142_2.jpg",

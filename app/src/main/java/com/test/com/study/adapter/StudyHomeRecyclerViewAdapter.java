@@ -1,8 +1,10 @@
 package com.test.com.study.adapter;
 
 import android.app.Activity;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.media.MediaMetadataRetriever;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -14,11 +16,11 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.bigkoo.convenientbanner.ConvenientBanner;
 import com.bigkoo.convenientbanner.holder.CBViewHolderCreator;
 import com.test.com.R;
+import com.test.com.activity.MainActivity;
 import com.test.com.study.activity.ErrorAnswerActivity;
 import com.test.com.study.activity.FileFormatActivity;
 import com.test.com.study.activity.MajorChoiceActivity;
@@ -243,9 +245,25 @@ public class StudyHomeRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerV
                                 {
                                     context.startActivity(new Intent(context, MajorChoiceActivity.class).putExtra("type",studyHomeTypeList.get(position).getId()));
                                 }
+                                else if("3".equals(studyHomeTypeList.get(position).getId()))
+                                {
+                                    context.startActivity(new Intent(context, MajorChoiceActivity.class).putExtra("type",studyHomeTypeList.get(position).getId()));
+                                }
                                 else
                                 {
-                                    Toast.makeText(context,"用户尚未激活",Toast.LENGTH_SHORT).show();
+
+                                    new AlertDialog.Builder(context).setTitle("提示")//设置对话框标题
+                                            .setMessage("该帐号尚未激活，不能使用该功能，是否前往激活？")//设置显示的内容
+                                            .setPositiveButton("激活", new DialogInterface.OnClickListener() {//添加确定按钮
+                                                @Override
+                                                public void onClick(DialogInterface dialog, int which) {//确定按钮的响应事件
+                                                    // TODO Auto-generated method stub
+                                                    dialog.dismiss();
+                                                    MainActivity.indexCount = 1;
+                                                    context.finish();
+                                                }
+
+                                            }).setNegativeButton("取消",null).show();//在按键响应事件中显示此对话框
                                 }
                             }
                             else
@@ -280,7 +298,21 @@ public class StudyHomeRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerV
             public void onClick(View v) {
                     if(!"".equals(spUtils.get("jihuo",Constants.uniqueness+"index","").toString()))
                         context.startActivity(new Intent(context, MajorChoiceActivity.class).putExtra("type","6"));
-                    else Toast.makeText(context,"用户尚未激活",Toast.LENGTH_SHORT).show();
+                    else
+                    {
+                        new AlertDialog.Builder(context).setTitle("提示")//设置对话框标题
+                                .setMessage("该帐号尚未激活，不能使用该功能，是否前往激活？")//设置显示的内容
+                                .setPositiveButton("激活", new DialogInterface.OnClickListener() {//添加确定按钮
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int which) {//确定按钮的响应事件
+                                        // TODO Auto-generated method stub
+                                        dialog.dismiss();
+                                        MainActivity.indexCount = 1;
+                                        context.finish();
+                                    }
+
+                                }).setNegativeButton("取消",null).show();//在按键响应事件中显示此对话框
+                    }
 
             }
         });
@@ -329,7 +361,21 @@ public class StudyHomeRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerV
             public void onClick(View v) {
                 if(!"".equals(spUtils.get("jihuo",Constants.uniqueness+"index","").toString()))
                 context.startActivity(new Intent(context, FileFormatActivity.class));
-                else Toast.makeText(context,"用户尚未激活",Toast.LENGTH_SHORT).show();
+                else
+                {
+                    new AlertDialog.Builder(context).setTitle("提示")//设置对话框标题
+                            .setMessage("该帐号尚未激活，不能使用该功能，是否前往激活？")//设置显示的内容
+                            .setPositiveButton("激活", new DialogInterface.OnClickListener() {//添加确定按钮
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {//确定按钮的响应事件
+                                    // TODO Auto-generated method stub
+                                    dialog.dismiss();
+                                    MainActivity.indexCount = 1;
+                                    context.finish();
+                                }
+
+                            }).setNegativeButton("取消",null).show();//在按键响应事件中显示此对话框
+                }
             }
         });
     }

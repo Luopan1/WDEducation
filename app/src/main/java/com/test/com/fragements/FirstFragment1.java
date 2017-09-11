@@ -1,10 +1,8 @@
 package com.test.com.fragements;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
@@ -28,7 +26,6 @@ import com.test.com.firstFragmentactivity.AskActivity;
 import com.test.com.firstFragmentactivity.CheckActivity;
 import com.test.com.firstFragmentactivity.NewStudentsCheckInActivity;
 import com.test.com.study.activity.StudyHomeActivity;
-import com.test.com.study.utils.SizeUtils;
 import com.test.com.utills.NetImageLoaderHolder;
 
 import java.util.ArrayList;
@@ -105,15 +102,10 @@ public class FirstFragment1 extends BaseFragment implements View.OnClickListener
         mFrequency = (TextView) headerview.findViewById(R.id.frequency);
         mTime = (TextView) headerview.findViewById(R.id.time);
         mListView.addHeaderView(headerview);
-        SizeUtils sizeUtils = new SizeUtils(getActivity());
 
-        int size = 750 / 304;
-        WindowManager wm = (WindowManager) getActivity().getSystemService(Context.WINDOW_SERVICE);
-        int width = wm.getDefaultDisplay().getWidth();
-        int height = wm.getDefaultDisplay().getHeight();
-        sizeUtils.setLayoutSizeHeight(mConvenientBanner, width / size / 2);
 
     }
+
 
     @Override
     protected void initData() {
@@ -220,36 +212,36 @@ public class FirstFragment1 extends BaseFragment implements View.OnClickListener
                 jumpToActivity(AskActivity.class, false);
                 break;
             case R.id.newsStudentCheck:
-                Bundle bundle=new Bundle();
-                bundle.putInt("type",1);
-                jumpToActivity(NewStudentsCheckInActivity.class,bundle,false);
+                Bundle bundle = new Bundle();
+                bundle.putInt("type", 1);
+                jumpToActivity(NewStudentsCheckInActivity.class, bundle, false);
 
 
                 break;
             case R.id.kaoshi:
-                 bundle = new Bundle();
-                bundle.putInt("type",2);
-                jumpToActivity(NewStudentsCheckInActivity.class,bundle,false);
+                bundle = new Bundle();
+                bundle.putInt("type", 2);
+                jumpToActivity(NewStudentsCheckInActivity.class, bundle, false);
                 break;
             case R.id.biye:
                 bundle = new Bundle();
-                bundle.putInt("type",3);
-                jumpToActivity(NewStudentsCheckInActivity.class,bundle,false);
+                bundle.putInt("type", 3);
+                jumpToActivity(NewStudentsCheckInActivity.class, bundle, false);
                 break;
             case R.id.xuewei:
                 bundle = new Bundle();
-                bundle.putInt("type",4);
-                jumpToActivity(NewStudentsCheckInActivity.class,bundle,false);
+                bundle.putInt("type", 4);
+                jumpToActivity(NewStudentsCheckInActivity.class, bundle, false);
                 break;
             case R.id.yingyu:
                 bundle = new Bundle();
-                bundle.putInt("type",5);
-                jumpToActivity(NewStudentsCheckInActivity.class,bundle,false);
+                bundle.putInt("type", 5);
+                jumpToActivity(NewStudentsCheckInActivity.class, bundle, false);
                 break;
             case R.id.buban:
                 bundle = new Bundle();
-                bundle.putInt("type",6);
-                jumpToActivity(NewStudentsCheckInActivity.class,bundle,false);
+                bundle.putInt("type", 6);
+                jumpToActivity(NewStudentsCheckInActivity.class, bundle, false);
                 break;
 
         }

@@ -30,6 +30,7 @@ import com.test.com.entity.BaoMIngCuXiaoMa;
 import com.test.com.entity.BaoMingDaijinQuan;
 import com.test.com.entity.BaoMingUser;
 import com.test.com.entity.OrderChanger;
+import com.test.com.utills.Constants;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -244,10 +245,10 @@ public class ComfirmOrderActivity extends BaseToolbarActivity {
                 break;
             case 1:
                 if (object.getInteger("code") == 1) {
-                    String orderNumber = object.getJSONObject("data").getString("dingdanhao");
-                    Log.e("TAG+order", orderNumber);
+                    Log.e("TAG", object.toString());
                     if (PayMethod == 1) {
                         /**支付宝支付*/
+                        String orderNumber = object.getJSONObject("data").getString("dingdanhao");
                         String allNeedMoney = totalMoney.getText().toString().trim();
                         int starIndex = allNeedMoney.lastIndexOf("￥");
                         String price = allNeedMoney.substring(starIndex + 1, allNeedMoney.length());
@@ -258,6 +259,15 @@ public class ComfirmOrderActivity extends BaseToolbarActivity {
 
                     } else if (PayMethod == 2) {
                         /**微信支付*/
+                        String prepay_id = object.getJSONObject("data").getString("package");
+
+                        int start = prepay_id.lastIndexOf("=");
+                        int end=prepay_id.length();
+                        String prepay=prepay_id.substring(start+1,end);
+                        Log.e("TAG+++",prepay);
+                        String nonceStr = object.getJSONObject("data").getString("nonceStr");
+                        Constants.genPayReq(this, prepay, nonceStr);
+
                     }
                 }
                 break;

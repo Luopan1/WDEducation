@@ -34,11 +34,12 @@
                     android:layout_centerInParent="true">
 
                     <com.test.com.utills.CircleImageView
+
                         android:id="@+id/userCicleImage"
                         android:layout_width="80dp"
                         android:layout_height="80dp"
                         android:layout_centerHorizontal="true"
-                        android:src="@mipmap/ic_launcher_round"/>
+                        android:src="@mipmap/touxiang"/>
 
                     <TextView
                         android:id="@+id/userNickName"
@@ -117,7 +118,7 @@
                             android:layout_height="20dp"
                             android:layout_centerVertical="true"
                             android:layout_marginLeft="20dp"
-                            android:src="@mipmap/ic_launcher_round"/>
+                            android:src="@mipmap/cuotiji"/>
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -174,6 +175,7 @@
                             android:layout_centerVertical="true"
                             android:layout_marginRight="20dp"
                             android:src="@mipmap/you"/>
+
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="1dp"
@@ -342,7 +344,8 @@
                     <RelativeLayout
                         android:id="@+id/clearChacheRelative"
                         android:layout_width="match_parent"
-                        android:layout_height="50dp">
+                        android:layout_height="50dp"
+                        android:visibility="gone">
 
                         <ImageView
                             android:layout_width="20dp"
@@ -425,7 +428,43 @@
                             />
                     </RelativeLayout>
 
+                    <RelativeLayout
+                        android:id="@+id/bindWeixinRelative"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp">
 
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="20dp"
+                            android:src="@mipmap/dingdan"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="48dp"
+                            android:text="绑定微信"
+                            android:textColor="@color/black"
+                            android:textSize="15sp"/>
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="20dp"
+                            android:src="@mipmap/you"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginLeft="15dp"
+                            android:background="@color/deep_gray"
+                            />
+                    </RelativeLayout>
                 </LinearLayout>
 
             </RelativeLayout>

@@ -84,4 +84,9 @@
         <item name="android:backgroundDimAmount">0.5</item>  //就是用来控制灰度的值，当为1时，界面除了我们的dialog内容是高亮显示的，dialog以外的区域是黑色的，完全看不到其他内容，系统的默认值是0.5
         <item name="android:backgroundDimEnabled">true</item>
     </style>
+
+    <style name="ToolbarTheme" parent="@style/ThemeOverlay.AppCompat.ActionBar">
+        <item name="actionMenuTextColor">@android:color/white</item> <!--  敲定颜色-->
+        <item name="android:textSize">13sp</item> <!--  搞掂字体大小-->
+    </style>
 </resources>

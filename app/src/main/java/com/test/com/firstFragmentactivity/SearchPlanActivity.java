@@ -68,11 +68,12 @@ public class SearchPlanActivity extends BaseToolbarActivity {
     protected void initData() {
         mHotSearch = new ArrayList<>();
         mHotSearch.add(0, "会计");
-        mHotSearch.add(1, "金融");
-        mHotSearch.add(2, "英语");
-        mHotSearch.add(3, "市场营销");
-        mHotSearch.add(4, "工商管理");
-        mHotSearch.add(5, "新闻学");
+        mHotSearch.add(1, "英语");
+        mHotSearch.add(2, "小学教育");
+        mHotSearch.add(3, "汉语言文学");
+        mHotSearch.add(4, "学前教育");
+        mHotSearch.add(5, "汉语言文学教育");
+        mHotSearch.add(6, "市场营销");
 
         id_flowlayout.setAdapter(new TagAdapter<String>(mHotSearch) {
             @Override
@@ -108,12 +109,10 @@ public class SearchPlanActivity extends BaseToolbarActivity {
         });
 
 
-        id_flowlayout.setOnTagClickListener(new TagFlowLayout.OnTagClickListener()
-        {
+        id_flowlayout.setOnTagClickListener(new TagFlowLayout.OnTagClickListener() {
             @Override
-            public boolean onTagClick(View view, int position, FlowLayout parent)
-            {
-               doSearch(mHotSearch.get(position));
+            public boolean onTagClick(View view, int position, FlowLayout parent) {
+                doSearch(mHotSearch.get(position));
                 return true;
             }
         });
@@ -156,7 +155,7 @@ public class SearchPlanActivity extends BaseToolbarActivity {
                     //                    HotSearchRelative.setVisibility(View.VISIBLE);
                     titleRelative.setVisibility(View.INVISIBLE);
                     setAdapter();
-                    ShowToast("没有此内容");
+                    ShowToast("暂无此专业考试计划");
                 }
 
 

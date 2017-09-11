@@ -58,4 +58,5 @@ public class UrlFactory {
     public static String lovemunAnswer = baseUrl + "index.php/Myapi/Index/answerFabulous";
     public static String getUserInfo = baseUrl + "index.php/Myapi/User/getUserInfo";
 
+    public static String scoreFind = baseUrl + "index.php/Myapi/index/scoreFind";
 }

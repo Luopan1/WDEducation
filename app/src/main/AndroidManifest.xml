@@ -306,6 +306,8 @@
         </activity>
         <activity android:name=".ThridFragemntActivity.BuySuccessActivity">
         </activity>
+        <activity android:name=".fourthFragementActivity.DaiJinGuiZeActivity">
+        </activity>
     </application>
 
 </manifest>

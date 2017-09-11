@@ -120,7 +120,7 @@ public class WebViewActivity extends BaseToolbarActivity {
             @Override
             public boolean shouldOverrideUrlLoading(WebView view, String url) {
                 view.loadUrl(url);
-                return true;
+                return false;
             }
         });
     }

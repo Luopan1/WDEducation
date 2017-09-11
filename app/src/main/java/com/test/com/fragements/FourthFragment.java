@@ -33,6 +33,7 @@ import com.test.com.R;
 import com.test.com.SharedInterFace;
 import com.test.com.UrlFactory;
 import com.test.com.activity.LoginActivity;
+import com.test.com.activity.MainActivity;
 import com.test.com.application.MyApplication;
 import com.test.com.baseUi.BaseFragment;
 import com.test.com.entity.UserInfo;
@@ -152,6 +153,18 @@ public class FourthFragment extends BaseFragment implements View.OnClickListener
 
 
     }
+
+    @Override
+    public void onHiddenChanged(boolean hidden) {
+        super.onHiddenChanged(hidden);
+        if (!hidden) {
+            if (MainActivity.indexCount == 1) {
+                MainActivity.indexCount = 0;
+                showPopWindow();
+            }
+        }
+    }
+
 
     @Override
     protected void setListener() {
@@ -285,8 +298,10 @@ public class FourthFragment extends BaseFragment implements View.OnClickListener
                     jumpToActivity(DaiJinQuanActivity.class, false);
                 break;
             case R.id.jihuoStatue:
-                if (isLogined())
-                    showPopWindow();
+                if (isLogined()) {
+                    if ("".equals(spUtils.get("jihuo", Constants.uniqueness + "index", "").toString()))
+                        showPopWindow();
+                }
                 break;
             case R.id.ShareRelative:
                 mSharedInterFace.sendShared();
@@ -304,7 +319,21 @@ public class FourthFragment extends BaseFragment implements View.OnClickListener
             case R.id.bindWeixinRelative:
                 if (isLogined()) {
                     if (MyApplication.getDataBase().getUnionid().isEmpty()) {
-                        mSharedInterFace.bindWeixin();
+                        if ((SPUtils.getCount().isEmpty()) && (SPUtils.getPWD().isEmpty())) {
+                            new AlertDialog.Builder(getActivity()).setTitle("提示")//设置对话框标题
+                                    .setMessage("当前账号和密码已被清空，请重新登录再使用绑定微信功能")//设置显示的内容
+                                    .setPositiveButton("确定", new DialogInterface.OnClickListener() {//添加确定按钮
+                                        @Override
+                                        public void onClick(DialogInterface dialog, int which) {//确定按钮的响应事件
+                                            // TODO Auto-generated method stub
+                                            dialog.dismiss();
+                                            jumpToActivity(LoginActivity.class, false);
+                                        }
+
+                                    }).show();//在按键响应事件中显示此对话框、
+                        } else {
+                            mSharedInterFace.bindWeixin();
+                        }
                     } else {
                         new AlertDialog.Builder(getActivity()).setTitle("提示")//设置对话框标题
                                 .setMessage("当前账号已经使用过微信绑定，无须再次绑定")//设置显示的内容
@@ -345,6 +374,7 @@ public class FourthFragment extends BaseFragment implements View.OnClickListener
                 MyApplication.getDataBase().setToken("");
                 SPUtils.saveUserInfo("", "");
                 SPUtils.setUnionid("");
+                MyApplication.getDataBase().setUnionid("");
                 Glide.with(getActivity()).load(R.mipmap.touxiang).asBitmap().into(mUserImageView);
                 jumpToActivity(LoginActivity.class, false);
 
@@ -452,7 +482,7 @@ public class FourthFragment extends BaseFragment implements View.OnClickListener
                 break;
 
             case 0:
-                /**登錄*/
+                /**账号和密码登錄*/
                 JSONObject jsonObject = JSON.parseObject(object.toString());
                 if (jsonObject.getInteger("code").equals(1)) {
                     Log.e("TAG+++passworld", "登录成功");
@@ -503,12 +533,14 @@ public class FourthFragment extends BaseFragment implements View.OnClickListener
 
                 break;
             case 1:
-                /**自動登錄*/
+                /**Unionid自動登錄*/
                 jsonObject = JSON.parseObject(object.toString());
                 if (jsonObject.getInteger("code").equals(1)) {
                     String token = jsonObject.getJSONObject("data").getString("token");
                     MyApplication.getDataBase().setToken(token);
                     // TODO: 2017/8/11 uuid不保存在sp中
+
+                    MyApplication.getDataBase().setUnionid(SPUtils.getUnionid());
 
                     String uuid = object.getJSONObject("data").getString("uuid");
                     MyApplication.userBaseInfo.setUuid(uuid);

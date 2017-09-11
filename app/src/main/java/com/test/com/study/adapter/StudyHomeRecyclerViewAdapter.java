@@ -272,7 +272,28 @@ public class StudyHomeRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerV
                             }
                     }
                     else
-                        context.startActivity(new Intent(context, OldExamActivity.class));
+                    {
+                        if("".equals(spUtils.get("jihuo",Constants.uniqueness+"index","").toString()))
+                        {
+                            new AlertDialog.Builder(context).setTitle("提示")//设置对话框标题
+                                    .setMessage("该帐号尚未激活，不能使用该功能，是否前往激活？")//设置显示的内容
+                                    .setPositiveButton("激活", new DialogInterface.OnClickListener() {//添加确定按钮
+                                        @Override
+                                        public void onClick(DialogInterface dialog, int which) {//确定按钮的响应事件
+                                            // TODO Auto-generated method stub
+                                            dialog.dismiss();
+                                            MainActivity.indexCount = 1;
+                                            context.finish();
+                                        }
+
+                                    }).setNegativeButton("取消",null).show();//在按键响应事件中显示此对话框
+                        }
+                        else
+                        {
+                            context.startActivity(new Intent(context, OldExamActivity.class));
+                        }
+                    }
+
                 }
             });
             holder.myRecyclerView.setLayoutManager(new GridLayoutManager(context, 3, GridLayoutManager.VERTICAL, false));

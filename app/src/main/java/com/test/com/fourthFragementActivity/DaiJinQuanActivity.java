@@ -58,7 +58,7 @@ public class DaiJinQuanActivity extends BaseToolbarActivity {
                 holder.setText(R.id.daiJinQuanName, item.getCoupon_name());
                 holder.setText(R.id.Money, item.getMoney());
                 holder.setText(R.id.useMethod, item.getCode());
-                holder.setText(R.id.DeadLine, "有效期:" + item.getEnd_time());
+                holder.setText(R.id.DeadLine, "有效期:"+item.getStart_time()+"-" + item.getEnd_time());
             }
         };
 
@@ -81,8 +81,15 @@ public class DaiJinQuanActivity extends BaseToolbarActivity {
 
     }
 
+
     @Override
     protected void initView() {
-        initToobar("代金券", R.mipmap.fanhui);
+        initToobar("代金券","使用规则", R.mipmap.fanhui);
+    }
+
+    @Override
+    public void RightOnClick() {
+        super.RightOnClick();
+        jumpToActivity(DaiJinGuiZeActivity.class,false);
     }
 }

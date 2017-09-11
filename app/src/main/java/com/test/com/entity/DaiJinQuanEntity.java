@@ -54,6 +54,15 @@ public class DaiJinQuanEntity {
         private String money;
         private String coupon_name;
         private String code;
+        private String start_time;
+
+        public String getStart_time() {
+            return start_time;
+        }
+
+        public void setStart_time(String start_time) {
+            this.start_time = start_time;
+        }
 
         public String getEnd_time() {
             return end_time;

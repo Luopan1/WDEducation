@@ -35,7 +35,7 @@
                 android:id="@+id/TextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
+                android:layout_centerVertical="true"
                 android:text="面值￥"
                 android:textColor="@color/white"/>
 
@@ -43,11 +43,11 @@
                 android:id="@+id/Money"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
+                android:layout_centerVertical="true"
                 android:layout_toRightOf="@+id/TextView"
-                android:text="80"
+                android:text="100"
                 android:textColor="@color/white"
-                android:textSize="40sp"/>
+                android:textSize="30sp"/>
         </RelativeLayout>
 
         <TextView

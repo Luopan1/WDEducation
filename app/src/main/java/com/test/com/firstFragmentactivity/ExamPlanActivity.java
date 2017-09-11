@@ -19,6 +19,7 @@ import com.test.com.adapter.ExamPlamListAdapter;
 import com.test.com.application.MyApplication;
 import com.test.com.baseUi.BaseToolbarActivity;
 import com.test.com.entity.ExamPlanLists;
+import com.test.com.utills.Constants;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -48,10 +49,15 @@ public class ExamPlanActivity extends BaseToolbarActivity {
 
     @Override
     protected void initData() {
-        RequestParams params = new RequestParams();
-        params.put("uuid", MyApplication.getDataBase().getUuid());
-        getDataFromInternet(UrlFactory.plan, params, 0);
-        showLoadingDialog();
+        if (!"".equals(spUtils.get("jihuo", Constants.uniqueness + "index", ""))) {
+            RequestParams params = new RequestParams();
+            params.put("uuid", MyApplication.getDataBase().getUuid());
+            getDataFromInternet(UrlFactory.plan, params, 0);
+            showLoadingDialog();
+        } else {
+            doSearch();
+        }
+
     }
 
     private void setAdapter() {
@@ -83,45 +89,39 @@ public class ExamPlanActivity extends BaseToolbarActivity {
                 mLists = new ArrayList<>();
                 ShowToast(object.getString("msg"));
                 Gson gson = new Gson();
-                if (object.getJSONObject("data").getJSONArray("planList").size() != 0) {
-                    ExamPlanLists examPlanLists = gson.fromJson(object.toJSONString(), ExamPlanLists.class);
-                    mLists.addAll(examPlanLists.getData().getPlanList());
-                    if (examPlanLists.getData().getPlanList().size() == 0) {
 
-                    } else {
-                        if (mLists.size() == 0) {
-                            noData.setVisibility(View.VISIBLE);
-                            examPlanRecylerView.setVisibility(View.INVISIBLE);
-                        } else {
-                            noData.setVisibility(View.INVISIBLE);
-                            examPlanRecylerView.setVisibility(View.VISIBLE);
-                        }
-                        majorCode.setText(examPlanLists.getData().getMajorInfo().getCode());
-                        majorName.setText(examPlanLists.getData().getMajorInfo().getName());
-                        setAdapter();
-                    }
+                ExamPlanLists examPlanLists = gson.fromJson(object.toJSONString(), ExamPlanLists.class);
+                mLists.addAll(examPlanLists.getData().getPlanList());
+                if (mLists.size() == 0) {
+                    noData.setVisibility(View.VISIBLE);
+                    examPlanRecylerView.setVisibility(View.INVISIBLE);
+                } else {
+                    noData.setVisibility(View.INVISIBLE);
+                    examPlanRecylerView.setVisibility(View.VISIBLE);
                 }
-                else {
-                    doSearch();
-                }
+                majorCode.setText(examPlanLists.getData().getMajorInfo().getCode());
+                majorName.setText(examPlanLists.getData().getMajorInfo().getName());
+                setAdapter();
+
+
                 break;
             case 1:
                 gson = new Gson();
-                if (object.getJSONObject("data").getJSONArray("planList").size() != 0) {
-                    ExamPlanLists examPlanLists = gson.fromJson(object.toJSONString(), ExamPlanLists.class);
-                    mLists.addAll(examPlanLists.getData().getPlanList());
-                    if (mLists.size() == 0) {
-                        noData.setVisibility(View.VISIBLE);
-                        examPlanRecylerView.setVisibility(View.INVISIBLE);
-                    } else {
-                        noData.setVisibility(View.INVISIBLE);
-                        examPlanRecylerView.setVisibility(View.VISIBLE);
 
-                    }
-                    majorCode.setText(examPlanLists.getData().getMajorInfo().getCode());
-                    majorName.setText(examPlanLists.getData().getMajorInfo().getName());
-                    setAdapter();
+                examPlanLists = gson.fromJson(object.toJSONString(), ExamPlanLists.class);
+                mLists.addAll(examPlanLists.getData().getPlanList());
+                if (mLists.size() == 0) {
+                    noData.setVisibility(View.VISIBLE);
+                    examPlanRecylerView.setVisibility(View.INVISIBLE);
+                } else {
+                    noData.setVisibility(View.INVISIBLE);
+                    examPlanRecylerView.setVisibility(View.VISIBLE);
+
                 }
+                majorCode.setText(examPlanLists.getData().getMajorInfo().getCode());
+                majorName.setText(examPlanLists.getData().getMajorInfo().getName());
+                setAdapter();
+
                 break;
         }
     }

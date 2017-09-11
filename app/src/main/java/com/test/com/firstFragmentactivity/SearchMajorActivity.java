@@ -27,7 +27,6 @@ import com.zhy.view.flowlayout.TagFlowLayout;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
 
 import butterknife.BindView;
 
@@ -55,14 +54,13 @@ public class SearchMajorActivity extends BaseToolbarActivity {
     @Override
     protected void initData() {
         mHotSearch = new ArrayList<>();
-        for (int i = 0; i < 10; i++) {
-            mHotSearch.add("这是第" + i + "个数据");
-
-        }
-        mHotSearch.add(2, "1111");
-        mHotSearch.add(4, "1111");
-        mHotSearch.add(6, "1111");
-        mHotSearch.add(8, "1111");
+        mHotSearch.add(0, "会计");
+        mHotSearch.add(1, "英语");
+        mHotSearch.add(2, "小学教育");
+        mHotSearch.add(3, "汉语言文学");
+        mHotSearch.add(4, "学前教育");
+        mHotSearch.add(5, "汉语言文学教育");
+        mHotSearch.add(6,"市场营销");
 
         id_flowlayout.setAdapter(new TagAdapter<String>(mHotSearch) {
             @Override
@@ -86,7 +84,7 @@ public class SearchMajorActivity extends BaseToolbarActivity {
                 if (actionId == EditorInfo.IME_ACTION_SEARCH) {
                     //TODO   搜索
                     if (!searchEdiText.getText().toString().trim().isEmpty()) {
-                        doSearch();
+                        doSearch(searchEdiText.getText().toString().trim());
                     } else {
                         ShowToast("请输入搜索内容");
                     }
@@ -97,17 +95,23 @@ public class SearchMajorActivity extends BaseToolbarActivity {
 
             }
         });
-        id_flowlayout.setOnSelectListener(new TagFlowLayout.OnSelectListener() {
+
+        id_flowlayout.setOnTagClickListener(new TagFlowLayout.OnTagClickListener()
+        {
             @Override
-            public void onSelected(Set<Integer> selectPosSet) {
-                ShowToast("你选择了第" + selectPosSet.toString() + "个");
+            public boolean onTagClick(View view, int position, FlowLayout parent)
+            {
+                doSearch(mHotSearch.get(position));
+                Log.e("TAG++++",mHotSearch.get(position));
+                return true;
             }
         });
+
     }
 
-    private void doSearch() {
+    private void doSearch(String text) {
         RequestParams params = new RequestParams();
-        params.put("searchCondition", searchEdiText.getText().toString().trim());
+        params.put("searchCondition", text);
         getDataFromInternet(UrlFactory.majorLists, params, 0);
         showLoadingDialog();
     }
@@ -126,7 +130,7 @@ public class SearchMajorActivity extends BaseToolbarActivity {
             Log.e("TAG+++++", mList.toString());
             setAdapter();
         } else {
-            ShowToast("没有此内容");
+            ShowToast("暂无此专业");
             mList.clear();
             setAdapter();
         }

@@ -142,7 +142,6 @@ public class MainActivity extends BaseToolbarActivity implements SharedInterFace
     protected void onResume() {
         if(indexCount == 1)
         {
-            indexCount= 0;
             mTabLayout.setCurrentTab(4);
         }
         else

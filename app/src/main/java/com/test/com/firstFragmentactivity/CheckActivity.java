@@ -1,11 +1,14 @@
 package com.test.com.firstFragmentactivity;
 
+import android.os.Bundle;
 import android.view.View;
 import android.widget.RelativeLayout;
 
 import com.bigkoo.convenientbanner.ConvenientBanner;
 import com.bigkoo.convenientbanner.holder.CBViewHolderCreator;
 import com.test.com.R;
+import com.test.com.UrlFactory;
+import com.test.com.WebViewActivity;
 import com.test.com.baseUi.BaseToolbarActivity;
 import com.test.com.utills.NetImageLoaderHolder;
 
@@ -51,26 +54,33 @@ public class CheckActivity extends BaseToolbarActivity {
 
     @Override
     public void onClick(View v) {
-            switch (v.getId()){
-                case R.id.checkGradeRelative:
-                    jumpToActivity(CheckGradeActivity.class,false);
-                    break;
-                case R.id.checkZuoWeiRelative:
-                    jumpToActivity(ZuoWeiCheckActivity.class,false);
-                    break;
-                case R.id.planRelative:
-                    jumpToActivity(ExamPlanActivity.class,false);
-                    break;
-                case R.id.majorRelative:
-                    jumpToActivity(MajorListsActivity.class,false);
-                    break;
+        switch (v.getId()) {
+            case R.id.checkGradeRelative:
+                Bundle bundle = new Bundle();
+                bundle.putString(WebViewActivity.URL, UrlFactory.scoreFind + "/type/" + 1);
+                bundle.putString(WebViewActivity.TITLE, "成绩查询");
+                jumpToActivity(WebViewActivity.class, bundle, false);
 
-            }
+                break;
+            case R.id.checkZuoWeiRelative:
+                bundle = new Bundle();
+                bundle.putString(WebViewActivity.URL, UrlFactory.scoreFind + "/type/" + 2);
+                bundle.putString(WebViewActivity.TITLE, "座位查询");
+                jumpToActivity(WebViewActivity.class, bundle, false);
+                break;
+            case R.id.planRelative:
+                jumpToActivity(ExamPlanActivity.class, false);
+                break;
+            case R.id.majorRelative:
+                jumpToActivity(MajorListsActivity.class, false);
+                break;
+
+        }
     }
 
     @Override
     protected void initView() {
-        initToobar("查查",R.mipmap.fanhui);
+        initToobar("查查", R.mipmap.fanhui);
 
         List<String> imagsList = Arrays.asList(images);//将图片放进这个集合
         mConvenientBanner.setPointViewVisible(true);//设置小圆点可见
@@ -88,6 +98,6 @@ public class CheckActivity extends BaseToolbarActivity {
 
     @Override
     protected void initBase() {
-        isshowActionbar=true;
+        isshowActionbar = true;
     }
 }

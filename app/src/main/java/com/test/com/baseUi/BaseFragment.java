@@ -293,7 +293,7 @@ public abstract class BaseFragment extends Fragment {
             @Override
             public void onFailure(int statusCode, Header[] headers, String responseString, Throwable throwable) {
                 cancleLoadingDialog();
-                ShowToast("网络连接错误 请稍候再试");
+                ShowToast("出错了 请稍候再试");
 
             }
 

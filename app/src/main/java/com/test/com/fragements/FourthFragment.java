@@ -432,6 +432,7 @@ public class FourthFragment extends BaseFragment implements View.OnClickListener
         super.getSuccess(object, what);
         switch (what) {
             case 2:
+
                 // TODO: 2017/8/24  存贮后台返回的激活账号
                 Log.e("TAG++jihui", object.toString());
                 if (object.getInteger("code") == 1) {

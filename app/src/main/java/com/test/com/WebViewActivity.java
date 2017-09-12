@@ -2,6 +2,7 @@ package com.test.com;
 
 import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.ProgressBar;
@@ -62,7 +63,6 @@ public class WebViewActivity extends BaseToolbarActivity {
         mWebView.getScrollBarFadeDuration();
 
 
-
         mWebView.setWebViewClient(new WebViewClient() {
             @Override
             public void onLoadResource(WebView view, String url) {
@@ -72,8 +72,12 @@ public class WebViewActivity extends BaseToolbarActivity {
 
             @Override
             public boolean shouldOverrideUrlLoading(WebView view, String url) {
-                view.loadUrl(url);
-                return true;
+                WebView.HitTestResult hitTestResult = view.getHitTestResult();
+                if (!TextUtils.isEmpty(url) && hitTestResult == null) {
+                    view.loadUrl(url);
+                    return true;
+                }
+                return super.shouldOverrideUrlLoading(view, url);
             }
 
             // 页面开始时调用
@@ -96,9 +100,6 @@ public class WebViewActivity extends BaseToolbarActivity {
         });
 
 
-
-
-
         mWebView.loadUrl(mUrl);
         Log.e("TAG+url", mUrl);
         mWebView.canGoBack();
@@ -107,8 +108,12 @@ public class WebViewActivity extends BaseToolbarActivity {
         mWebView.setWebViewClient(new WebViewClient() {
             @Override
             public boolean shouldOverrideUrlLoading(WebView view, String url) {
-                view.loadUrl(url);
-                return false;
+                WebView.HitTestResult hitTestResult = view.getHitTestResult();
+                if (!TextUtils.isEmpty(url) && hitTestResult == null) {
+                    view.loadUrl(url);
+                    return true;
+                }
+                return super.shouldOverrideUrlLoading(view, url);
             }
         });
     }

@@ -89,29 +89,30 @@ public class ChangePassWorldActivity extends BaseToolbarActivity {
     public void getSuccess(JSONObject object, int what) {
         super.getSuccess(object, what);
         ShowToast(object.getString("msg"));
-        if (object.getInteger("code").equals("1")) {
-            SPUtils.saveUserInfo(newPwd.getText().toString().trim(), SPUtils.getCount());
+        if (object.getInteger("code").equals(1)) {
+            //            SPUtils.saveUserInfo(newPwd.getText().toString().trim(), SPUtils.getCount());
+            showDialog();
 
             MyApplication.getDataBase().setToken("");
             SPUtils.saveUserInfo("", "");
             SPUtils.setUnionid("");
             MyApplication.getDataBase().setUnionid("");
-
-
-            new AlertDialog.Builder(ChangePassWorldActivity.this).setTitle("提示")//设置对话框标题
-                    .setMessage("密码修改成功，请重新登录")//设置显示的内容
-                    .setPositiveButton("确定", new DialogInterface.OnClickListener() {//添加确定按钮
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {//确定按钮的响应事件
-                            // TODO Auto-generated method stub
-                            dialog.dismiss();
-                            jumpToActivity(LoginActivity.class, false);
-                        }
-
-                    }).show();//在按键响应事件中显示此对话框、
-
-
         }
 
+    }
+
+    public void showDialog() {
+        new AlertDialog.Builder(ChangePassWorldActivity.this).setTitle("提示")//设置对话框标题
+
+                .setMessage("密码修改成功，请重新登录！")//设置显示的内容
+
+                .setPositiveButton("确定", new DialogInterface.OnClickListener() {//添加确定按钮
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {//确定按钮的响应事件
+                        dialog.dismiss();
+                        jumpToActivity(LoginActivity.class, true);
+                    }
+
+                }).show();//在按键响应事件中显示此对话框
     }
 }

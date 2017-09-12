@@ -187,6 +187,7 @@ public class FourthFragment extends BaseFragment implements View.OnClickListener
             public void onRefresh(TwinklingRefreshLayout refreshLayout) {
 
                 if (SPUtils.getCount().trim().isEmpty() && SPUtils.getUnionid().trim().isEmpty()) {
+                    Glide.with(getActivity()).load(R.mipmap.touxiang).asBitmap().into(mUserImageView);
                     refreshLayout.finishRefreshing();
                 } else if (MyApplication.getDataBase().getToken().isEmpty()) {
                     if (!SPUtils.getCount().trim().isEmpty()) {

@@ -91,13 +91,17 @@ public class ExamPlanActivity extends BaseToolbarActivity {
                 Gson gson = new Gson();
 
                 ExamPlanLists examPlanLists = gson.fromJson(object.toJSONString(), ExamPlanLists.class);
-                mLists.addAll(examPlanLists.getData().getPlanList());
-                if (mLists.size() == 0) {
-                    noData.setVisibility(View.VISIBLE);
-                    examPlanRecylerView.setVisibility(View.INVISIBLE);
-                } else {
-                    noData.setVisibility(View.INVISIBLE);
-                    examPlanRecylerView.setVisibility(View.VISIBLE);
+                if (examPlanLists.getData() != null) {
+
+
+                    mLists.addAll(examPlanLists.getData().getPlanList());
+                    if (mLists.size() == 0) {
+                        noData.setVisibility(View.VISIBLE);
+                        examPlanRecylerView.setVisibility(View.INVISIBLE);
+                    } else {
+                        noData.setVisibility(View.INVISIBLE);
+                        examPlanRecylerView.setVisibility(View.VISIBLE);
+                    }
                 }
                 majorCode.setText(examPlanLists.getData().getMajorInfo().getCode());
                 majorName.setText(examPlanLists.getData().getMajorInfo().getName());
@@ -109,18 +113,20 @@ public class ExamPlanActivity extends BaseToolbarActivity {
                 gson = new Gson();
 
                 examPlanLists = gson.fromJson(object.toJSONString(), ExamPlanLists.class);
-                mLists.addAll(examPlanLists.getData().getPlanList());
-                if (mLists.size() == 0) {
-                    noData.setVisibility(View.VISIBLE);
-                    examPlanRecylerView.setVisibility(View.INVISIBLE);
-                } else {
-                    noData.setVisibility(View.INVISIBLE);
-                    examPlanRecylerView.setVisibility(View.VISIBLE);
+                if(examPlanLists.getData()!=null) {
+                    mLists.addAll(examPlanLists.getData().getPlanList());
+                    if (mLists.size() == 0) {
+                        noData.setVisibility(View.VISIBLE);
+                        examPlanRecylerView.setVisibility(View.INVISIBLE);
+                    } else {
+                        noData.setVisibility(View.INVISIBLE);
+                        examPlanRecylerView.setVisibility(View.VISIBLE);
 
+                    }
                 }
-                majorCode.setText(examPlanLists.getData().getMajorInfo().getCode());
-                majorName.setText(examPlanLists.getData().getMajorInfo().getName());
-                setAdapter();
+                    majorCode.setText(examPlanLists.getData().getMajorInfo().getCode());
+                    majorName.setText(examPlanLists.getData().getMajorInfo().getName());
+                    setAdapter();
 
                 break;
         }

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.test.com.ThridFragemntActivity.DaiJinQuanActivity">
+    tools:context="com.test720.wendujiaoyu.ThridFragemntActivity.DaiJinQuanActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -25,12 +25,12 @@
                 android:textSize="17sp"/>
         </RelativeLayout>
 
-        <com.test.com.baseUi.MListView
+        <com.test720.wendujiaoyu.baseUi.MListView
             android:id="@+id/canUseDaiJinQuanListView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@color/white"
-            android:divider="@null"></com.test.com.baseUi.MListView>
+            android:divider="@null"></com.test720.wendujiaoyu.baseUi.MListView>
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -45,12 +45,12 @@
                 android:textSize="17sp"/>
         </RelativeLayout>
 
-        <com.test.com.baseUi.MListView
+        <com.test720.wendujiaoyu.baseUi.MListView
             android:id="@+id/cantUseDaiJinQuanListView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@color/white"
-            android:divider="@null"></com.test.com.baseUi.MListView>
+            android:divider="@null"></com.test720.wendujiaoyu.baseUi.MListView>
 
         <Button
             android:layout_marginBottom="20dp"

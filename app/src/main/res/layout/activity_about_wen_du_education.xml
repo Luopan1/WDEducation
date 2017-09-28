@@ -1,32 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<ScrollView
+    android:scrollbars="none"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.test.com.fourthFragementActivity.AboutWenDuEducationActivity">
+    tools:context="com.test720.wendujiaoyu.fourthFragementActivity.AboutWenDuEducationActivity">
 
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
-        android:layout_marginTop="50dp">
+        android:layout_marginTop="5dp"
+        >
 
         <ImageView
             android:id="@+id/imageview"
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="45dp"
             android:src="@mipmap/company_icon"/>
 
         <TextView
+            android:lineSpacingExtra="2dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/imageview"
-            android:layout_marginTop="120dp"
-            android:text="    文都教育名师团队，一对一辅导，海量课程免费试听，班主任全程督学，让学习更高效，文都教育班主任全程督学，全方位测评答疑，签约通关，不过免费重学，总有一款适合你！"
+            android:layout_marginTop="5dp"
+            android:text="    文都在线教育是一家致力于高等教育自学考试的专业助学机构，自成立以来已经累计服务众多自考学员，帮助莘莘学子通过大自考实现专升本、第二学位的梦想。文都在线教育，以专业高效的教学质量，热情周到的教学服务，确保学员顺利报考和取到毕业证。用我们真挚的努力，让人人读的起本科，人人考得过本科。
+文都教育依托西南财经大学、四川大学、西南交大、四川师范大学等众多“211”、“985”工程院校的优质教育资源，通过名校联合办学，组建了一支强大的自考教学研发团队，围绕高等教育自学考试，建立了一套实用高效的研发体系和规范的服务流程，精准把握命题规律，透彻讲解课程要点，践行着“过关才是硬道理“的承诺。
+我们秉承总部“专注专业，学员至上”的宗旨，为大自考学员提供系统化、专业化的“一站式”自考助学服务：专业报考咨询、代为报名报考、全套教材配送、考前提醒、海量复习资料及试卷免费下载、精品视频随时看随时学、在线模考随时学随时练、顾问团队专业辅导、腾讯课堂、在线课堂答疑解惑、专业老师协助处理主考院校毕业论文设计及答辩等事宜。"
+
             android:textColor="@color/black"/>
     </RelativeLayout>
-</RelativeLayout>
+</ScrollView>

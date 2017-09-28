@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.test.com.activity.RegiestActivity1">
+    tools:context="com.test720.wendujiaoyu.activity.RegiestActivity1">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -23,7 +23,7 @@
 
                 <TextView
                     android:id="@+id/textview1"
-                    android:layout_width="wrap_content"
+                    android:layout_width="80dp"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:layout_marginLeft="20dp"
@@ -53,7 +53,7 @@
 
                 <TextView
                     android:id="@+id/textview2"
-                    android:layout_width="wrap_content"
+                    android:layout_width="80dp"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:layout_marginLeft="20dp"
@@ -95,13 +95,15 @@
                 android:layout_height="55dp">
 
                 <TextView
+                    android:layout_marginLeft="5dp"
                     android:id="@+id/textview3"
-                    android:layout_width="wrap_content"
+                    android:layout_width="80dp"
                     android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_marginLeft="20dp"
                     android:text="姓名"
-                    android:textColor="#999999"/>
+                    android:textColor="#999999"
+                    android:layout_centerVertical="true"
+                    android:layout_alignLeft="@+id/textView5"
+                    android:layout_alignStart="@+id/textView5"/>
 
                 <EditText
                     android:id="@+id/name"
@@ -117,7 +119,8 @@
                     android:layout_height="1dp"
                     android:layout_alignParentBottom="true"
                     android:layout_marginLeft="15dp"
-                    android:background="@color/deep_gray"/>
+                    android:background="@color/deep_gray"
+                    android:id="@+id/textView5"/>
             </RelativeLayout>
 
             <RelativeLayout
@@ -173,7 +176,7 @@
 
                 <TextView
                     android:id="@+id/textview5"
-                    android:layout_width="wrap_content"
+                    android:layout_width="80dp"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:layout_marginLeft="20dp"
@@ -206,7 +209,7 @@
 
                 <TextView
                     android:id="@+id/textview6"
-                    android:layout_width="wrap_content"
+                    android:layout_width="80dp"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:layout_marginLeft="20dp"
@@ -236,7 +239,7 @@
 
                 <TextView
                     android:id="@+id/textview7"
-                    android:layout_width="wrap_content"
+                    android:layout_width="80dp"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:layout_marginLeft="20dp"
@@ -267,14 +270,14 @@
 
                 <TextView
                     android:id="@+id/textview8"
-                    android:layout_width="wrap_content"
+                    android:layout_width="80dp"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:layout_marginLeft="20dp"
                     android:text="QQ邮箱"
                     android:textColor="#999999"/>
 
-                <com.test.com.wd.baseUi.AutoComplete
+                <com.test720.wendujiaoyu.wd.baseUi.AutoComplete
                     android:id="@+id/QQmail"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -299,7 +302,7 @@
 
                 <TextView
                     android:id="@+id/textview9"
-                    android:layout_width="wrap_content"
+                    android:layout_width="80dp"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:layout_marginLeft="20dp"
@@ -330,7 +333,7 @@
 
                 <TextView
                     android:id="@+id/textview10"
-                    android:layout_width="wrap_content"
+                    android:layout_width="80dp"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:layout_marginLeft="20dp"

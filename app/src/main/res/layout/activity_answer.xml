@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/backgunag"
     android:orientation="vertical"
-    tools:context="com.test.com.study.activity.AnswerActivity">
+    tools:context="com.test720.wendujiaoyu.study.activity.AnswerActivity">
     <RelativeLayout
         android:layout_width="match_parent"
         android:background="@color/base_color"

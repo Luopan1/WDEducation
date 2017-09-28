@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.test.com.study.view.SlidingButtonView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:id="@+id/layout_bg"
-    android:background="@android:color/white"
-    android:layout_marginBottom="3dp"
+<com.test720.wendujiaoyu.study.view.SlidingButtonView xmlns:android="http://schemas.android.com/apk/res/android"
+                                                      android:layout_width="match_parent"
+                                                      android:layout_height="wrap_content"
+                                                      android:id="@+id/layout_bg"
+                                                      android:background="@android:color/white"
+                                                      android:layout_marginBottom="3dp"
     >
 
     <RelativeLayout
@@ -60,4 +60,4 @@
         </RelativeLayout>
 
     </RelativeLayout>
-</com.test.com.study.view.SlidingButtonView>
+</com.test720.wendujiaoyu.study.view.SlidingButtonView>

@@ -63,7 +63,7 @@
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp">
 
-        <com.test.com.utills.CircleImageView
+        <com.test720.wendujiaoyu.utills.CircleImageView
             android:id="@+id/anwserPhotoImage"
             android:src="@mipmap/ic_launcher"
             android:layout_marginTop="@dimen/dp_10"

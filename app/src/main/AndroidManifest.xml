@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.test.com">
+          package="com.test720.wendujiaoyu">
 
     <!-- Required -->
     <permission
-        android:name="com.test.com.permission.JPUSH_MESSAGE"
+        android:name="com.test720.wendujiaoyu.permission.JPUSH_MESSAGE"
         android:protectionLevel="signature"/>
     <!-- To auto-complete the email text field in the login form with the user's emails -->
     <uses-permission android:name="android.permission.CALL_PHONE"/>
@@ -50,7 +50,7 @@
     <uses-permission android:name="android.permission.READ_LOGS"/>
 
     <application
-        android:name=".application.MyApplication"
+        android:name="com.test720.wendujiaoyu.application.MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/company_icon"
         android:label="@string/app_name"
@@ -59,7 +59,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".activity.MainActivity"
+            android:name="com.test720.wendujiaoyu.activity.MainActivity"
             android:windowSoftInputMode="adjustPan">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -67,87 +67,87 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".firstFragmentactivity.CheckActivity">
+        <activity android:name="com.test720.wendujiaoyu.firstFragmentactivity.CheckActivity">
         </activity>
-        <activity android:name=".firstFragmentactivity.CheckGradeActivity">
+        <activity android:name="com.test720.wendujiaoyu.firstFragmentactivity.CheckGradeActivity">
         </activity>
-        <activity android:name=".firstFragmentactivity.ZuoWeiCheckActivity">
+        <activity android:name="com.test720.wendujiaoyu.firstFragmentactivity.ZuoWeiCheckActivity">
         </activity>
-        <activity android:name=".firstFragmentactivity.ExamPlanActivity">
+        <activity android:name="com.test720.wendujiaoyu.firstFragmentactivity.ExamPlanActivity">
         </activity>
-        <activity android:name=".firstFragmentactivity.MajorListsActivity">
+        <activity android:name="com.test720.wendujiaoyu.firstFragmentactivity.MajorListsActivity">
         </activity>
-        <activity android:name=".firstFragmentactivity.SearchPlanActivity">
+        <activity android:name="com.test720.wendujiaoyu.firstFragmentactivity.SearchPlanActivity">
         </activity>
-        <activity android:name=".firstFragmentactivity.AskActivity">
+        <activity android:name="com.test720.wendujiaoyu.firstFragmentactivity.AskActivity">
         </activity>
-        <activity android:name=".firstFragmentactivity.AskAndAnwserInfoActivity">
+        <activity android:name="com.test720.wendujiaoyu.firstFragmentactivity.AskAndAnwserInfoActivity">
         </activity>
-        <activity android:name=".firstFragmentactivity.SearchAskActivity"/>
-        <activity android:name=".firstFragmentactivity.NewsActivity">
+        <activity android:name="com.test720.wendujiaoyu.firstFragmentactivity.SearchAskActivity"/>
+        <activity android:name="com.test720.wendujiaoyu.firstFragmentactivity.NewsActivity">
         </activity>
-        <activity android:name=".secondFragmentActivity.ZiKaoInformationActivity">
+        <activity android:name="com.test720.wendujiaoyu.secondFragmentActivity.ZiKaoInformationActivity">
         </activity>
-        <activity android:name=".WebViewActivity">
+        <activity android:name="com.test720.wendujiaoyu.WebViewActivity">
         </activity>
-        <activity android:name=".secondFragmentActivity.KnownZIKaoActivity">
+        <activity android:name="com.test720.wendujiaoyu.secondFragmentActivity.KnownZIKaoActivity">
         </activity>
-        <activity android:name=".secondFragmentActivity.ZiKaoMajorActivity">
+        <activity android:name="com.test720.wendujiaoyu.secondFragmentActivity.ZiKaoMajorActivity">
         </activity>
-        <activity android:name=".secondFragmentActivity.StudentTouGaoActivity">
+        <activity android:name="com.test720.wendujiaoyu.secondFragmentActivity.StudentTouGaoActivity">
         </activity>
-        <activity android:name=".secondFragmentActivity.JoinUsActivity">
+        <activity android:name="com.test720.wendujiaoyu.secondFragmentActivity.JoinUsActivity">
         </activity>
         <activity
-            android:name=".fourthFragementActivity.PersonalSettingActivity"
+            android:name="com.test720.wendujiaoyu.fourthFragementActivity.PersonalSettingActivity"
             android:label="@string/title_activity_personal_setting"
             android:theme="@style/AppTheme">
         </activity>
-        <activity android:name=".fourthFragementActivity.ChangeUserNickNameActivity">
+        <activity android:name="com.test720.wendujiaoyu.fourthFragementActivity.ChangeUserNickNameActivity">
         </activity>
-        <activity android:name=".fourthFragementActivity.CacheActivity">
+        <activity android:name="com.test720.wendujiaoyu.fourthFragementActivity.CacheActivity">
         </activity>
-        <activity android:name=".fourthFragementActivity.VideoInfoActivity">
+        <activity android:name="com.test720.wendujiaoyu.fourthFragementActivity.VideoInfoActivity">
         </activity>
-        <activity android:name=".fourthFragementActivity.AboutWenDuEducationActivity">
+        <activity android:name="com.test720.wendujiaoyu.fourthFragementActivity.AboutWenDuEducationActivity">
         </activity>
-        <activity android:name=".fourthFragementActivity.ChangePassWorldActivity">
+        <activity android:name="com.test720.wendujiaoyu.fourthFragementActivity.ChangePassWorldActivity">
         </activity>
-        <activity android:name=".firstFragmentactivity.NewStudentsCheckInActivity">
+        <activity android:name="com.test720.wendujiaoyu.firstFragmentactivity.NewStudentsCheckInActivity">
         </activity>
-        <activity android:name=".activity.ForgetPassWorldActivity"/>
-        <activity android:name=".activity.LoginActivity"/>
-        <activity android:name=".activity.RegiestActivity"/>
-        <activity android:name=".activity.RegiestActivity1">
+        <activity android:name="com.test720.wendujiaoyu.activity.ForgetPassWorldActivity"/>
+        <activity android:name="com.test720.wendujiaoyu.activity.LoginActivity"/>
+        <activity android:name="com.test720.wendujiaoyu.activity.RegiestActivity"/>
+        <activity android:name="com.test720.wendujiaoyu.activity.RegiestActivity1">
         </activity>
-        <activity android:name=".fourthFragementActivity.DaiJinQuanActivity">
+        <activity android:name="com.test720.wendujiaoyu.fourthFragementActivity.DaiJinQuanActivity">
         </activity>
-        <activity android:name=".activity.CommitSuccessActivity">
+        <activity android:name="com.test720.wendujiaoyu.activity.CommitSuccessActivity">
         </activity>
-        <activity android:name=".firstFragmentactivity.NewsActivity1"/>
-        <activity android:name=".activity.WeiXinRegiestnActivity">
+        <activity android:name="com.test720.wendujiaoyu.firstFragmentactivity.NewsActivity1"/>
+        <activity android:name="com.test720.wendujiaoyu.activity.WeiXinRegiestnActivity">
         </activity>
-        <activity android:name=".fourthFragementActivity.VideoCacheActivity">
+        <activity android:name="com.test720.wendujiaoyu.fourthFragementActivity.VideoCacheActivity">
         </activity>
-        <activity android:name=".secondFragmentActivity.GreatLearnerAvtivity">
+        <activity android:name="com.test720.wendujiaoyu.secondFragmentActivity.GreatLearnerAvtivity">
         </activity>
-        <activity android:name=".firstFragmentactivity.SearchMajorActivity">
+        <activity android:name="com.test720.wendujiaoyu.firstFragmentactivity.SearchMajorActivity">
         </activity>
-        <activity android:name=".ThridFragemntActivity.ComfirmOrderActivity">
+        <activity android:name="com.test720.wendujiaoyu.ThridFragemntActivity.ComfirmOrderActivity">
         </activity>
-        <activity android:name=".ThridFragemntActivity.DaiJinQuanActivity">
+        <activity android:name="com.test720.wendujiaoyu.ThridFragemntActivity.DaiJinQuanActivity">
         </activity>
-        <activity android:name=".ThridFragemntActivity.HowToGetDaijinquanActivity">
+        <activity android:name="com.test720.wendujiaoyu.ThridFragemntActivity.HowToGetDaijinquanActivity">
         </activity>
-        <activity android:name=".ThridFragemntActivity.CuXiaoMaActivity">
+        <activity android:name="com.test720.wendujiaoyu.ThridFragemntActivity.CuXiaoMaActivity">
         </activity>
-        <activity android:name=".ThridFragemntActivity.HowToGetCuXiaoMaActivity">
+        <activity android:name="com.test720.wendujiaoyu.ThridFragemntActivity.HowToGetCuXiaoMaActivity">
         </activity>
 
         <!-- 友盟分享 -->
         <!-- wechat callback -->
         <activity
-            android:name=".wxapi.WXEntryActivity"
+            android:name="com.test720.wendujiaoyu.wxapi.WXEntryActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:exported="true"
             android:screenOrientation="portrait"
@@ -206,7 +206,7 @@
                 <action android:name="cn.jpush.android.intent.PUSH_TIME"/>
             </intent-filter>
         </service>
-        <service android:name=".services.MyService"/>
+        <service android:name="com.test720.wendujiaoyu.services.MyService"/>
 
         <!-- since 1.8.0 option 可选项。用于同一设备中不同应用的JPush服务相互拉起的功能。 -->
         <!-- 若不启用该功能可删除该组件，将不拉起其他应用也不能被其他应用拉起 -->
@@ -261,33 +261,33 @@
             android:name="UMENG_CHANNEL"
             android:value="Channel ID"/>
 
-        <activity android:name=".activity.WeChatLoginActivity">
+        <activity android:name="com.test720.wendujiaoyu.activity.WeChatLoginActivity">
         </activity>
-        <activity android:name=".fourthFragementActivity.MyOrderActivity">
+        <activity android:name="com.test720.wendujiaoyu.fourthFragementActivity.MyOrderActivity">
         </activity>
-        <activity android:name=".study.activity.StudyHomeActivity">
+        <activity android:name="com.test720.wendujiaoyu.study.activity.StudyHomeActivity">
         </activity>
-        <activity android:name=".study.activity.MajorChoiceActivity"/>
-        <activity android:name=".study.activity.CurriculumClassificationActivity"/>
-        <activity android:name=".study.activity.CurriculumClassificationListActivity"/>
+        <activity android:name="com.test720.wendujiaoyu.study.activity.MajorChoiceActivity"/>
+        <activity android:name="com.test720.wendujiaoyu.study.activity.CurriculumClassificationActivity"/>
+        <activity android:name="com.test720.wendujiaoyu.study.activity.CurriculumClassificationListActivity"/>
         <activity
-            android:name=".study.activity.VideoPlayActivity"
+            android:name="com.test720.wendujiaoyu.study.activity.VideoPlayActivity"
             android:configChanges="orientation|screenSize"
             android:theme="@style/ActivityTheme.Full"/>
 
-        <service android:name=".study.download.DownLoadService"/>
+        <service android:name="com.test720.wendujiaoyu.study.download.DownLoadService"/>
 
-        <activity android:name=".study.activity.FileSeeActivity"/>
-        <activity android:name=".study.activity.AnswerActivity"/>
-        <activity android:name=".study.activity.ErrorAnswerActivity"/>
-        <activity android:name=".study.activity.CacheCurriculumListActivity"/>
-        <activity android:name=".study.activity.CacheCurriculumTypeListActivity"/>
-        <activity android:name=".study.activity.FileFormatActivity"/>
-        <activity android:name=".study.activity.CacheListActivity"/>
-        <activity android:name=".study.activity.OldExamActivity"/>
-        <activity android:name=".wxapi.WXPayEntryActivity"/>
-        <activity android:name=".study.activity.TeacherListActivity"/>
-        <activity android:name=".study.activity.LookVideoListActivity"/>
+        <activity android:name="com.test720.wendujiaoyu.study.activity.FileSeeActivity"/>
+        <activity android:name="com.test720.wendujiaoyu.study.activity.AnswerActivity"/>
+        <activity android:name="com.test720.wendujiaoyu.study.activity.ErrorAnswerActivity"/>
+        <activity android:name="com.test720.wendujiaoyu.study.activity.CacheCurriculumListActivity"/>
+        <activity android:name="com.test720.wendujiaoyu.study.activity.CacheCurriculumTypeListActivity"/>
+        <activity android:name="com.test720.wendujiaoyu.study.activity.FileFormatActivity"/>
+        <activity android:name="com.test720.wendujiaoyu.study.activity.CacheListActivity"/>
+        <activity android:name="com.test720.wendujiaoyu.study.activity.OldExamActivity"/>
+        <activity android:name="com.test720.wendujiaoyu.wxapi.WXPayEntryActivity"/>
+        <activity android:name="com.test720.wendujiaoyu.study.activity.TeacherListActivity"/>
+        <activity android:name="com.test720.wendujiaoyu.study.activity.LookVideoListActivity"/>
 
         <!-- 阿里支付 -->
         <activity
@@ -304,9 +304,9 @@
             android:screenOrientation="behind"
             android:windowSoftInputMode="adjustResize|stateHidden">
         </activity>
-        <activity android:name=".ThridFragemntActivity.BuySuccessActivity">
+        <activity android:name="com.test720.wendujiaoyu.ThridFragemntActivity.BuySuccessActivity">
         </activity>
-        <activity android:name=".fourthFragementActivity.DaiJinGuiZeActivity">
+        <activity android:name="com.test720.wendujiaoyu.fourthFragementActivity.DaiJinGuiZeActivity">
         </activity>
     </application>
 

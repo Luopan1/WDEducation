@@ -3,12 +3,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@color/white"
+                android:id="@+id/Relative"
                 android:orientation="vertical">
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:visibility="gone"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
         <RelativeLayout
             android:id="@+id/titleRelative"
             android:layout_width="match_parent"
@@ -23,31 +25,101 @@
                 android:text="确认基本信息"
                 android:textColor="#6c6c6c"/>
         </RelativeLayout>
+
         <ListView
             android:id="@+id/BaoMingRecyclerView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/titleRelative"/>
     </RelativeLayout>
+
     <LinearLayout
         android:layout_width="wrap_content"
-        android:gravity="center"
+        android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:orientation="vertical"
-        android:layout_height="wrap_content">
+        android:gravity="center"
+        android:orientation="vertical">
+
         <ImageView
             android:layout_width="120dp"
-            android:src="@mipmap/wendujiaoyuicon"
-            android:layout_height="120dp" />
+            android:layout_height="120dp"
+            android:src="@mipmap/wendujiaoyuicon"/>
+
         <TextView
             android:layout_width="wrap_content"
-            android:textColor="@color/text_color"
-            android:textSize="18sp"
-            android:text="请联系文都教育老师\n电话:400-105-5899"
-            android:lineSpacingExtra="3dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_10"
             android:gravity="center"
-            android:layout_margin="15dp"
-            android:layout_height="wrap_content" />
+            android:lineSpacingExtra="3dp"
+            android:text="请联系文都教育老师"
+            android:textColor="@color/text_color"
+            android:textSize="18sp"/>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center">
+
+            <RelativeLayout
+                android:id="@+id/TelePhoneRelative"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true">
+
+                <TextView
+                    android:id="@+id/Tele"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center_horizontal"
+                    android:text="电话:"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"/>
+
+                <TextView
+                    android:id="@+id/TelePhoneNumber"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:layout_toRightOf="@+id/Tele"
+                    android:gravity="center"
+                    android:lineSpacingExtra="3dp"
+                    android:text="400-105-5899"
+                    android:textColor="@color/base_color"
+                    android:textSize="18sp"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/TelePhoneRelative"
+                android:layout_centerHorizontal="true">
+
+                <TextView
+                    android:id="@+id/QQ"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center_horizontal"
+                    android:text=" QQ:"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"/>
+
+                <TextView
+
+                    android:id="@+id/QQNumber"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_toRightOf="@+id/QQ"
+                    android:lineSpacingExtra="3dp"
+                    android:text="2605047064 "
+                    android:textColor="@color/base_color"
+                    android:textSize="18sp"/>
+            </RelativeLayout>
+        </RelativeLayout>
+
     </LinearLayout>
 
 

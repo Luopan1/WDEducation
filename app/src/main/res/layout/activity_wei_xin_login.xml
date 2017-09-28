@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.test.com.activity.RegiestActivity1">
+    tools:context="com.test720.wendujiaoyu.activity.RegiestActivity1">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -23,7 +23,7 @@
 
                 <TextView
                     android:id="@+id/textview1"
-                    android:layout_width="wrap_content"
+                    android:layout_width="80dp"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:layout_marginLeft="20dp"
@@ -53,10 +53,10 @@
 
                 <TextView
                     android:id="@+id/textview2"
-                    android:layout_width="wrap_content"
+                    android:layout_width="80dp"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:layout_marginLeft="20dp"
+                    android:layout_marginLeft="25dp"
                     android:text="手机验证码"
                     android:textColor="#999999"/>
 
@@ -97,7 +97,7 @@
 
                 <TextView
                     android:id="@+id/textview3"
-                    android:layout_width="wrap_content"
+                    android:layout_width="80dp"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:layout_marginLeft="20dp"
@@ -174,7 +174,7 @@
 
                 <TextView
                     android:id="@+id/textview5"
-                    android:layout_width="wrap_content"
+                    android:layout_width="80dp"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:layout_marginLeft="20dp"
@@ -205,7 +205,7 @@
 
                 <TextView
                     android:id="@+id/textview6"
-                    android:layout_width="wrap_content"
+                    android:layout_width="80dp"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:layout_marginLeft="20dp"
@@ -235,7 +235,7 @@
 
                 <TextView
                     android:id="@+id/textview7"
-                    android:layout_width="wrap_content"
+                    android:layout_width="80dp"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:layout_marginLeft="20dp"
@@ -265,14 +265,14 @@
 
                 <TextView
                     android:id="@+id/textview8"
-                    android:layout_width="wrap_content"
+                    android:layout_width="80dp"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:layout_marginLeft="20dp"
                     android:text="QQ邮箱"
                     android:textColor="#999999"/>
 
-                <com.test.com.wd.baseUi.AutoComplete
+                <com.test720.wendujiaoyu.wd.baseUi.AutoComplete
                     android:id="@+id/QQmail"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -296,7 +296,7 @@
 
                 <TextView
                     android:id="@+id/textview9"
-                    android:layout_width="wrap_content"
+                    android:layout_width="80dp"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:layout_marginLeft="20dp"
@@ -327,7 +327,7 @@
 
                 <TextView
                     android:id="@+id/textview10"
-                    android:layout_width="wrap_content"
+                    android:layout_width="80dp"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:layout_marginLeft="20dp"

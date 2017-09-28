@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.test.com.WD.study.activity.VideoPlayActivity">
+    tools:context="com.test720.wendujiaoyu.WD.study.activity.VideoPlayActivity">
    <RelativeLayout
        android:layout_width="match_parent"
        android:background="@color/base_color"

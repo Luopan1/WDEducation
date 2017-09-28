@@ -11,11 +11,11 @@
             android:layout_height="match_parent"
             android:paddingBottom="25dp">
 
-            <com.test.com.wd.utills.ConvenientBannerr
+            <com.test720.wendujiaoyu.wd.utills.ConvenientBannerr
                 android:id="@+id/CarouselImage"
                 android:layout_width="match_parent"
                 android:layout_height="150dp">
-            </com.test.com.wd.utills.ConvenientBannerr>
+            </com.test720.wendujiaoyu.wd.utills.ConvenientBannerr>
 
             <RelativeLayout
                 android:id="@+id/contentRelative1"

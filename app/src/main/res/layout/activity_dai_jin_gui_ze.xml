@@ -1,102 +1,109 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              xmlns:app="http://schemas.android.com/apk/res-auto"
               xmlns:tools="http://schemas.android.com/tools"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
-              android:orientation="vertical"
               android:background="@color/backgunag"
-              tools:context="com.test.com.fourthFragementActivity.DaiJinGuiZeActivity">
+              android:orientation="vertical"
+              tools:context="com.test720.wendujiaoyu.fourthFragementActivity.DaiJinGuiZeActivity">
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:padding="10dp"
-        android:orientation="vertical"
-        android:background="@color/white"
+        android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
-        android:layout_height="wrap_content">
-        <TextView
-            android:layout_width="wrap_content"
-            android:textColor="@color/text_color"
-            android:textSize="15sp"
-            android:text="1.什么是代金券"
-            android:layout_height="wrap_content" />
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:padding="10dp">
 
         <TextView
             android:layout_width="wrap_content"
-            android:textColor="@color/gray"
-            android:textSize="13sp"
+            android:layout_height="wrap_content"
+            android:text="1.什么是代金券"
+            android:textColor="@color/text_color"
+            android:textSize="15sp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:text="代金券是文都教育发行和认可的优惠券，可以在文都教育报名付款时抵扣相应面额的金额"
-            android:layout_height="wrap_content" />
+            android:textColor="@color/gray"
+            android:textSize="13sp"/>
 
     </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:padding="10dp"
-        android:orientation="vertical"
-        android:background="@color/white"
+        android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
-        android:layout_height="wrap_content">
-        <TextView
-            android:layout_width="wrap_content"
-            android:textColor="@color/text_color"
-            android:textSize="15sp"
-            android:text="2.如何获取代金券"
-            android:layout_height="wrap_content" />
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:padding="10dp">
 
         <TextView
             android:layout_width="wrap_content"
-            android:textColor="@color/gray"
-            android:textSize="13sp"
+            android:layout_height="wrap_content"
+            android:text="2.如何获取代金券"
+            android:textColor="@color/text_color"
+            android:textSize="15sp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:text="文都教育手机客户端和网站会不定期推出活动，手机用户可以经常打开文都教育手机客户端，关注弹出的活动通知，同事同学们可以积极参加文都教育线下举办的各种活动，有机会获得代金券，机会不容错过！"
-            android:layout_height="wrap_content" />
+            android:textColor="@color/gray"
+            android:textSize="13sp"/>
 
     </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:padding="10dp"
-        android:orientation="vertical"
-        android:background="@color/white"
+        android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
-        android:layout_height="wrap_content">
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:padding="10dp">
+
         <TextView
             android:layout_width="wrap_content"
-            android:textColor="@color/text_color"
-            android:textSize="15sp"
+            android:layout_height="wrap_content"
             android:text="3.如何使用代金券"
-            android:layout_height="wrap_content" />
+            android:textColor="@color/text_color"
+            android:textSize="15sp"/>
 
         <TextView
             android:layout_width="wrap_content"
-            android:textColor="@color/gray"
-            android:textSize="13sp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:text="在手机端付款时，可以选择使用代金券，抵扣相应的金额，每次限使用一张"
-            android:layout_height="wrap_content" />
+            android:text="在手机端付款时，可以选择使用代金券，抵扣相应的金额，每次限使用一张,与其他活动不能同时使用。"
+            android:textColor="@color/gray"
+            android:textSize="13sp"/>
 
     </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:padding="10dp"
-        android:orientation="vertical"
-        android:background="@color/white"
+        android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
-        android:layout_height="wrap_content">
-        <TextView
-            android:layout_width="wrap_content"
-            android:textColor="@color/text_color"
-            android:textSize="15sp"
-            android:text="4.代金券找零兑现吗？"
-            android:layout_height="wrap_content" />
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:padding="10dp">
 
         <TextView
             android:layout_width="wrap_content"
-            android:textColor="@color/gray"
-            android:textSize="13sp"
+            android:layout_height="wrap_content"
+            android:text="4.代金券找零兑现吗？"
+            android:textColor="@color/text_color"
+            android:textSize="15sp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:text="使用代金券，不兑现，不找零。"
-            android:layout_height="wrap_content" />
+            android:textColor="@color/gray"
+            android:textSize="13sp"/>
 
     </LinearLayout>
 </LinearLayout>

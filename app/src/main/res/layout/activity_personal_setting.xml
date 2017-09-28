@@ -25,7 +25,7 @@
                 android:text="头像"
                 android:textColor="@color/black"/>
 
-            <com.test.com.utills.CircleImageView
+            <com.test720.wendujiaoyu.utills.CircleImageView
                 android:id="@+id/userCicleImage"
                 android:layout_width="50dp"
                 android:layout_height="50dp"

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.test.com.WD.study.activity.TeacherListActivity">
+    tools:context="com.test720.wendujiaoyu.WD.study.activity.TeacherListActivity">
     <com.lcodecore.tkrefreshlayout.TwinklingRefreshLayout
         android:id="@+id/layout_refreshLayout"
         android:layout_width="match_parent"

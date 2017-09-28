@@ -27,7 +27,7 @@
                 android:lineSpacingExtra="3dp"
                 android:layout_marginLeft="15dp"
                 android:layout_height="wrap_content" />
-            <com.test.com.study.view.ListViewForScrollView
+            <com.test720.wendujiaoyu.study.view.ListViewForScrollView
                 android:id="@+id/lv_answer"
                 android:layout_width="match_parent"
                 android:layout_marginTop="20dp"

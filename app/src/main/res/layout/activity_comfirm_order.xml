@@ -11,7 +11,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         app:layout_scrollFlags="scroll"
-        tools:context="com.test.com.wd.ThridFragemntActivity.ComfirmOrderActivity">
+        tools:context="com.test720.wendujiaoyu.wd.ThridFragemntActivity.ComfirmOrderActivity">
 
 
         <RelativeLayout
@@ -29,14 +29,14 @@
                 android:textColor="#6c6c6c"/>
         </RelativeLayout>
 
-        <com.test.com.baseUi.MListView
+        <com.test720.wendujiaoyu.baseUi.MListView
             android:id="@+id/BaomingInfoListView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:background="@color/white"
             android:divider="@null"
-            android:listSelector="@android:color/transparent"></com.test.com.baseUi.MListView>
+            android:listSelector="@android:color/transparent"></com.test720.wendujiaoyu.baseUi.MListView>
 
         <RelativeLayout
             android:layout_width="match_parent"

@@ -1,84 +1,98 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.test.com.WD.study.activity.FileSeeActivity">
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:context="com.test720.wendujiaoyu.WD.study.activity.FileSeeActivity">
+
     <LinearLayout
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:orientation="vertical"
         android:gravity="center_horizontal"
-        android:layout_height="wrap_content">
+        android:orientation="vertical">
+
         <ImageView
             android:layout_width="70dp"
-            android:src="@mipmap/ic_word"
-            android:layout_height="70dp" />
+            android:layout_height="70dp"
+            android:src="@mipmap/ic_word"/>
+
         <TextView
             android:id="@+id/tv_progress"
-              android:layout_width="wrap_content"
-            android:visibility="gone"
-              android:textColor="@color/base_color"
-              android:textSize="15sp"
-              android:text="下载进度:0%"
-              android:layout_height="wrap_content" />
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="下载进度:0%"
+            android:textColor="@color/base_color"
+            android:textSize="15sp"
+            android:visibility="gone"/>
         <!--<RelativeLayout-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="match_parent"></RelativeLayout>-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"></RelativeLayout>-->
         <LinearLayout
             android:id="@+id/layout_progress_bg"
             android:layout_width="match_parent"
-            android:visibility="gone"
-            android:orientation="horizontal"
+            android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
-            android:gravity="center"
             android:layout_marginRight="10dp"
-            android:layout_height="wrap_content">
-        <ProgressBar
-            android:id="@+id/pbCrosswise"
-            style="@android:style/Widget.ProgressBar.Horizontal"
-            android:progressDrawable="@drawable/progressbar_style"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="5dp"
-            android:max="100"/>
-          <RelativeLayout
-              android:id="@+id/layout_delete"
-              android:layout_width="40dp"
-              android:layout_height="40dp">
-              <ImageView
-                  android:layout_width="wrap_content"
-                  android:src="@mipmap/ic_shanchu"
-                  android:layout_centerInParent="true"
-                  android:layout_height="wrap_content" />
-          </RelativeLayout>
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <ProgressBar
+                android:id="@+id/pbCrosswise"
+                style="@android:style/Widget.ProgressBar.Horizontal"
+                android:layout_width="0dp"
+                android:layout_height="5dp"
+                android:layout_weight="1"
+                android:max="100"
+                android:progressDrawable="@drawable/progressbar_style"/>
+
+            <RelativeLayout
+                android:id="@+id/layout_delete"
+                android:layout_width="40dp"
+                android:layout_height="40dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:src="@mipmap/ic_shanchu"/>
+            </RelativeLayout>
         </LinearLayout>
+
         <TextView
             android:id="@+id/tv_download"
-              android:layout_width="match_parent"
-              android:textColor="@color/white"
-              android:textSize="15sp"
-            android:layout_marginTop="5dp"
-              android:text="开始下载"
-            android:gravity="center"
-            android:background="@drawable/base_color_corn5"
-              android:layout_marginLeft="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_marginLeft="15dp"
             android:layout_marginRight="15dp"
-              android:layout_height="35dp" />
+            android:layout_marginTop="5dp"
+            android:background="@drawable/base_color_corn5"
+            android:gravity="center"
+            android:text="开始下载"
+            android:textColor="@color/white"
+            android:textSize="15sp"/>
     </LinearLayout>
+
     <com.joanzapata.pdfview.PDFView
         android:id="@+id/pdfView"
         android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:background="@color/white"
-        android:visibility="gone"
-        android:layout_height="match_parent" />
+        android:visibility="gone"/>
+
     <TextView
         android:id="@+id/tv_num"
         android:layout_width="wrap_content"
-        android:visibility="gone"
         android:layout_height="wrap_content"
         android:padding="5dp"
-        android:text=""/>
+        android:text=""
+        android:visibility="gone"/>
 
+    <com.test720.wendujiaoyu.baseUi.ProgressWebview
+        android:id="@+id/webView"
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:visibility="gone"
+        android:layout_height="match_parent"></com.test720.wendujiaoyu.baseUi.ProgressWebview>
 </RelativeLayout>

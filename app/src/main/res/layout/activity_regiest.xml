@@ -5,7 +5,7 @@
     android:id="@+id/activity_regiest"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.test.com.activity.RegiestActivity">
+    tools:context="com.test720.wendujiaoyu.activity.RegiestActivity">
 
     <LinearLayout
         android:id="@+id/titleLinear"

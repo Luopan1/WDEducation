@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.test.com.fourthFragementActivity.VideoInfoActivity">
+    tools:context="com.test720.wendujiaoyu.fourthFragementActivity.VideoInfoActivity">
     <com.github.jdsjlzx.recyclerview.LRecyclerView
         android:background="@color/deep_gray"
         android:id="@+id/videoInfoListView"

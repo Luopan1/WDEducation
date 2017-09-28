@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.test.com.ThridFragemntActivity.CuXiaoMaActivity">
+    tools:context="com.test720.wendujiaoyu.ThridFragemntActivity.CuXiaoMaActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"

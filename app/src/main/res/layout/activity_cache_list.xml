@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/backgunag"
     android:orientation="vertical"
-    tools:context="com.test.com.WD.study.activity.CacheListActivity">
+    tools:context="com.test720.wendujiaoyu.WD.study.activity.CacheListActivity">
     <android.support.v7.widget.RecyclerView
         android:id="@+id/my_recycler_view"
         android:layout_width="match_parent"

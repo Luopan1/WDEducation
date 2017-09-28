@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/backgunag"
     android:orientation="vertical"
-    tools:context="com.test.com.study.activity.CurriculumClassificationActivity">
+    tools:context="com.test720.wendujiaoyu.study.activity.CurriculumClassificationActivity">
     <com.lcodecore.tkrefreshlayout.TwinklingRefreshLayout
         android:id="@+id/layout_refreshLayout"
         android:layout_width="match_parent"
